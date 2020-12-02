@@ -1,0 +1,15 @@
+{% extends 'main/base.html' %}
+
+{% block title %}
+Добавить тест
+{% endblock %}
+
+{% block content %}
+<div>
+	<ul class="menu">
+		<li><a href="{% url 'testh' %}">Все тесты</a></li>
+		<li><a href="#">Мои тесты</a></li>
+		<li><a href="{% url 'adk' %}">Добавить тест</a></li>
+	</ul>
+</div>
+{% endblock %}

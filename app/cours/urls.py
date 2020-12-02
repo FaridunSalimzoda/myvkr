@@ -1,0 +1,12 @@
+from django.urls import path
+from . import views
+urlpatterns = [
+        path('', views.cour, name='kurs'),
+        path('adk', views.adk, name='adk'),
+        # path('<int:pk>/', views.kursDetailView.as_view(), name='datail'),
+        path('<int:pk>/', views.detail, name='datail'),
+        path('<int:pk>/new_topic', views.newtopic, name='newtopic'),
+        path('<int:pk>/update', views.kursUpdateView.as_view(), name='update'),
+        path('<int:pk>/delete', views.kursDeleteView.as_view(), name='delete'),
+        path('<int:pk>/<int:kk>', views.topic_dateil, name='top_datail')
+    ]
