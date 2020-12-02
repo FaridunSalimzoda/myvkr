@@ -7,7 +7,7 @@
 
 
 {% block content %}
-<h1>{{ post.title }}</h1>
+<h1>{{ top.title }}</h1>
 
 <div>
 	<ul class="menu">
@@ -22,15 +22,14 @@
 
 <div class="co">
         {% if top %}
-    {% for el in top %}
+
    <div class="kurs">
-       <h3>{{ el.title }}</h3>
-       <p>{{ el.task }}</p>
-       <a href="{% url 'top_datail' el.id %}">Перейти</a>
+       <h3>{{ top.title }}</h3>
+       <p>{{ top.task }}</p>
    </div>
    
-    {%endfor%}
+
    {% else %}
-   <p>Вы не добавили темы</p>
+   <p>Нет содержимого</p>
    {%endif%}
    {% endblock %}

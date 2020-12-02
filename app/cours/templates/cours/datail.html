@@ -27,7 +27,7 @@
    <div class="kurs">
        <h3>{{ el.title }}</h3>
        <p>{{ el.task }}</p>
-       <a href="{% url 'datail' el.id %}">Перейти</a>
+       <a href="{% url 'top_datail' pk el.id %}">Перейти</a>
    </div>
    
     {%endfor%}
