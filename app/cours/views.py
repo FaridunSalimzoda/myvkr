@@ -19,7 +19,7 @@ def topic_dateil(request, pk, kk):
     ku = list(kursu.objects.filter(id=pk).values())
     return render(request, 'cours/topic.html', {'top': top[0], 'pk': pk, 'kk': kk})
 # class kursDetailView(DetailView):
-#   проверка  model = kursu
+#    model = kursu
 #     template_name = 'cours/datail.html'
 #     context_object_name = 'post'
 
