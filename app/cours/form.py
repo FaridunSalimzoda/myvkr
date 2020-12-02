@@ -30,7 +30,7 @@ class topicform(ModelForm):
 
         widgets = {
             'title': TextInput(attrs={
-                'class': '',
+                'class': 'form_class',
                 'placeholder': 'Название темы'
             })
         }

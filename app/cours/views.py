@@ -30,11 +30,21 @@ class kursUpdateView(UpdateView):
 
     form_class = kursuform
 
+class topicUpdateView(UpdateView):
+    model = addtopic
+    template_name = 'cours/update_topic.html'
+
+    form_class = topicform
 
 class kursDeleteView(DeleteView):
     model = kursu
     success_url = '/course/'
     template_name = 'cours/cours_delete.html'
+
+class topicDeleteView(DeleteView):
+    model = addtopic
+    success_url = '/course/'
+    template_name = 'cours/delete_topic.html'
 
 
 def newtopic(request, pk: any):

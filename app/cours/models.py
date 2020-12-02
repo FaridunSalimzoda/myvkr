@@ -25,7 +25,7 @@ class addtopic(models.Model):
         return self.title
 
     def get_absolute_url(self):
-        return f'/course/topics/{self.id}'
+        return f'/course/{self.id}/{self.kk}'
 
     class Meta:
 

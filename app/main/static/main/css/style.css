@@ -178,10 +178,14 @@ margin-bottom: 25px;
 .iksweb{
     border: 1px solid #000;
     max-width: 100%;
+    float: right;
+    width: 900px;
+    margin-top: -100px;
 }
 
 .iksweb td{
     padding-left: 8%;
+
 }
 
 
@@ -206,5 +210,9 @@ margin-bottom: 25px;
 }
 
 .menu td+td {
-    padding: 10;
+    padding: 10px;
+}
+
+.menu_gl{
+width: 180px;
 }

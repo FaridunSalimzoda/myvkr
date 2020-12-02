@@ -10,7 +10,7 @@
 <h1>{{ post.title }}</h1>
 <p>{{ post.task }}</p>
 <p>{{post.teache }}</p>
-<div>
+<div class="menu_gl">
 	<ul class="menu">
 		<li><a href="{% url 'delete' pk %}">Удалить курс</a></li>
 		<li><a href="{% url 'update' pk %}">Изменить курс</a></li>
@@ -24,14 +24,22 @@
 <div class="co">
         {% if top %}
     {% for el in top %}
-   <div class="kurs">
-       <h3>{{ el.title }}</h3>
-       <p>{{ el.task }}</p>
-       <a href="{% url 'top_datail' pk el.id %}">Перейти</a>
-   </div>
-   
+
+
+		<table class="iksweb">
+			<tbody>
+
+				<tr>
+					<td class="table_na"><a href="{% url 'top_datail' pk el.id %}">{{ el.title }}</a></td>
+					<td class="table_na"></td>
+				</tr>
+			</tbody>
+		</table>
+
     {%endfor%}
    {% else %}
    <p>Вы не добавили темы</p>
    {%endif%}
    {% endblock %}
+
+   
