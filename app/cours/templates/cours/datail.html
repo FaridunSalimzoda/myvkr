@@ -22,20 +22,21 @@
 
 
 <div class="co">
-        {% if top %}
-    {% for el in top %}
+
 
 		<table class="iksweb">
 			<tbody>
-
+        {% if top %}
+    {% for el in top %}
 				<tr>
 					<td class="table_na"><a href="{% url 'top_datail' pk el.id %}">{{ el.title }}</a></td>
 					<td class="table_na"></td>
 				</tr>
+		{%endfor%}
 			</tbody>
 		</table>
 
-    {%endfor%}
+
    {% else %}
    <p>Вы не добавили темы</p>
    {%endif%}

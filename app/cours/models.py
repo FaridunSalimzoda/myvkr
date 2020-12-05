@@ -18,18 +18,16 @@ class kursu(models.Model):
         verbose_name_plural = 'Курсы'
 
 
-class addtopic(kursu):
-    title_topic = models.CharField('Название темы', max_length=75)
-    kursu_ptr = models.OneToOneField(
-        kursu, on_delete=models.CASCADE,
-        parent_link=True,
-        primary_key=True,
-    )
+class addtopic(models.Model):
+    title = models.CharField('Название темы', max_length=75)
+    task = models.TextField('Описание темы', max_length=250)
+    kursu_ptr = models.ForeignKey(kursu, on_delete=models.CASCADE)
+
     def __str__(self):
-        return self.title_topic
+        return f'Тема {self.title} курса {self.kursu_ptr}'
 
     def get_absolute_url(self):
-        return f'/course/{self.kursu_ptr}/{self.kk}'
+        return f'/course/{self.kursu_ptr.id}/{self.id}'
 
     class Meta:
 

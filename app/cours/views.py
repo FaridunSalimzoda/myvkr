@@ -52,14 +52,17 @@ def newtopic(request, pk: any):
     if request.method == 'POST':
         form = topicform(request.POST)
         if form.is_valid():
+            # form['kursu'] = kursu.objects.filter(id=pk)
             form.save()
             return redirect('kurs')
         else:
             error = 'error'
     form = topicform()
+    # form['kursu'] = kursu.objects.filter(id=pk)
     data = {
         'form': form,
-        'error': error
+        'error': error,
+        'pk': pk
     }
     return render(request, 'cours/addTopic.html', data)
 
