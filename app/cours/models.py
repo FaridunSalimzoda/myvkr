@@ -20,12 +20,14 @@ class kursu(models.Model):
 
 class addtopic(models.Model):
     title = models.CharField('Название темы', max_length=75)
+    task = models.TextField('Описание темы', max_length=250)
+    kursu_ptr = models.ForeignKey(kursu, on_delete=models.CASCADE)
 
     def __str__(self):
-        return self.title
+        return f'Тема {self.title} курса {self.kursu_ptr}'
 
     def get_absolute_url(self):
-        return f'/course/{self.id}/{self.kk}'
+        return f'/course/{self.kursu_ptr.id}/{self.id}'
 
     class Meta:
 

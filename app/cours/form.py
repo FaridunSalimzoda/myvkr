@@ -1,5 +1,5 @@
 from .models import kursu, addtopic
-from django.forms import ModelForm, TextInput, Textarea
+from django.forms import ModelForm, TextInput, Textarea, Select
 
 
 class kursuform(ModelForm):
@@ -26,11 +26,21 @@ class kursuform(ModelForm):
 class topicform(ModelForm):
     class Meta:
         model = addtopic
-        fields = ['title']
+        fields = ['title', 'task', 'kursu_ptr']
+
+        # fields['kursu_prt'] = pk
 
         widgets = {
             'title': TextInput(attrs={
                 'class': 'form_class',
                 'placeholder': 'Название темы'
-            })
+            }),
+            'task': Textarea(attrs={
+                'class': 'form_class',
+                'placeholder': 'Описание темы'
+            }),
+            'kursu_ptr': Select(attrs={
+                'class': 'form_class',
+                'placeholder': 'Название курса'
+            }),
         }
