@@ -27,9 +27,6 @@ class topicform(ModelForm):
     class Meta:
         model = addtopic
         fields = ['title', 'task', 'kursu_ptr']
-
-        # fields['kursu_prt'] = pk
-
         widgets = {
             'title': TextInput(attrs={
                 'class': 'form_class',
