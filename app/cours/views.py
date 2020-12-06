@@ -14,10 +14,14 @@ def detail(request, pk):
     top = addtopic.objects.filter(kursu_ptr=pk)
     return render(request, 'cours/datail.html', {'post': ku[0], 'top': top, 'pk': pk})
 
-
 def topic_dateil(request, pk, kk):
-    top = list(addtopic.objects.filter(id=kk).values())
+    top = addtopic.objects.filter(kursu_ptr=pk)
+    ku = list(kursu.objects.filter(id=pk).values())
     return render(request, 'cours/topic.html', {'top': top[0], 'pk': pk, 'kk': kk})
+# class kursDetailView(DetailView):
+#    model = kursu
+#     template_name = 'cours/datail.html'
+#     context_object_name = 'post'
 
 
 class kursUpdateView(UpdateView):
@@ -26,19 +30,16 @@ class kursUpdateView(UpdateView):
 
     form_class = kursuform
 
-
 class topicUpdateView(UpdateView):
     model = addtopic
     template_name = 'cours/update_topic.html'
 
     form_class = topicform
 
-
 class kursDeleteView(DeleteView):
     model = kursu
     success_url = '/course/'
     template_name = 'cours/cours_delete.html'
-
 
 class topicDeleteView(DeleteView):
     model = addtopic
@@ -51,11 +52,13 @@ def newtopic(request, pk: any):
     if request.method == 'POST':
         form = topicform(request.POST)
         if form.is_valid():
+            # form['kursu'] = kursu.objects.filter(id=pk)
             form.save()
             return redirect('kurs')
         else:
             error = 'error'
     form = topicform()
+    # form['kursu'] = kursu.objects.filter(id=pk)
     data = {
         'form': form,
         'error': error,
