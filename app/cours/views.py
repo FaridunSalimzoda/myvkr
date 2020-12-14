@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from .models import kursu, addtopic
+from .models import kursu, addtopic, AssignedCoursesTable, UserTable, TestTable, QuestionsTable, AnswerTable, ExamTable, ResultsTable
 from .form import kursuform, topicform
 from django.views.generic import DetailView, UpdateView, DeleteView
 
@@ -82,3 +82,4 @@ def adk(request):
         'error': error
     }
     return render(request, 'cours/addKurs.html', data)
+

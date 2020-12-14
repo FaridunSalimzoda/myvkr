@@ -47,8 +47,8 @@ class UserTable(models.Model):
         verbose_name_plural = 'Пользователи'
 
 class AssignedCoursesTable(models.Model):
-    id_course = models.ManyToManyField(kursu, on_delete=models.CASCADE)
-    id_user = models.ManyToManyField(UserTable, on_delete=models.CASCADE)
+    id_course = models.ForeignKey(kursu, on_delete=models.CASCADE)
+    id_user = models.ForeignKey(UserTable, on_delete=models.CASCADE)
 
 class TestTable(models.Model):
     id_topic = models.ForeignKey(addtopic, on_delete=models.CASCADE)
@@ -76,13 +76,17 @@ class AnswerTable(models.Model):
         verbose_name_plural = 'Ответы'
 
 class ExamTable(models.Model):
-    id_questions = models.ManyToManyField(QuestionsTable, on_delete=models.CASCADE)
-    id_answer = models.ManyToManyField(AnswerTable, on_delete=models.CASCADE)
+    id_questions = models.ForeignKey(QuestionsTable, on_delete=models.CASCADE)
+    id_answer = models.ForeignKey(AnswerTable, on_delete=models.CASCADE)
 
 class ResultsTable(models.Model):
-    id_test = models.ManyToManyField(TestTable, on_delete=models.CASCADE)
-    id_user = models.ManyToManyField(UserTable, on_delete=models.CASCADE)
-    id_exam = models.ManyToManyField(ExamTable, on_delete=models.CASCADE)
+    id_test = models.ForeignKey(TestTable, on_delete=models.CASCADE)
+    id_user = models.ForeignKey(UserTable, on_delete=models.CASCADE)
+    id_exam = models.ForeignKey(ExamTable, on_delete=models.CASCADE)
     estimation = models.IntegerField()
     timer = models.TimeField()
+
+    class Meta:
+        verbose_name = 'Результат'
+        verbose_name_plural = 'Результаты'
 
