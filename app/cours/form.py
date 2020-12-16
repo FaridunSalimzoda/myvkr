@@ -1,10 +1,10 @@
-from .models import kursu, addtopic
+from .models import CoueseTable,TopicTable
 from django.forms import ModelForm, TextInput, Textarea, Select
 
 
 class kursuform(ModelForm):
     class Meta:
-        model = kursu
+        model = CoueseTable
         fields = ['title', 'task', 'teache']
 
         widgets = {
@@ -25,8 +25,8 @@ class kursuform(ModelForm):
 
 class topicform(ModelForm):
     class Meta:
-        model = addtopic
-        fields = ['title', 'task', 'kursu_ptr']
+        model = TopicTable
+        fields = ['title', 'task', 'id_course']
         widgets = {
             'title': TextInput(attrs={
                 'class': 'form_class',
@@ -36,7 +36,7 @@ class topicform(ModelForm):
                 'class': 'form_class',
                 'placeholder': 'Описание темы'
             }),
-            'kursu_ptr': Select(attrs={
+            'id_course': Select(attrs={
                 'class': 'form_class',
                 'placeholder': 'Название курса'
             }),

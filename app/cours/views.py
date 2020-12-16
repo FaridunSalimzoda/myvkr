@@ -1,22 +1,22 @@
 from django.shortcuts import render, redirect
-from .models import kursu, addtopic, AssignedCoursesTable, UserTable, TestTable, QuestionsTable, AnswerTable, ExamTable, ResultsTable
+from .models import CoueseTable, TopicTable, AssignedCoursesTable, RolesTable , TestTable, QuestionsTable, AnswerTable, ExamTable, ResultsTable
 from .form import kursuform, topicform
 from django.views.generic import DetailView, UpdateView, DeleteView
 
 
 def cour(request):
-    ku = kursu.objects.order_by('id')
+    ku = CoueseTable.objects.order_by('id')
     return render(request, 'cours/cours_home.html', {'ku': ku})
 
 
 def detail(request, pk):
-    ku = list(kursu.objects.filter(id=pk).values())
-    top = addtopic.objects.filter(kursu_ptr=pk)
+    ku = list(CoueseTable.objects.filter(id=pk).values())
+    top = TopicTable.objects.filter(id_course=pk)
     return render(request, 'cours/datail.html', {'post': ku[0], 'top': top, 'pk': pk})
 
 def topic_dateil(request, pk, kk):
-    top = addtopic.objects.filter(kursu_ptr=pk)
-    ku = list(kursu.objects.filter(id=pk).values())
+    top = TopicTable.objects.filter(id_course=pk)
+    ku = list(CoueseTable.objects.filter(id=pk).values())
     return render(request, 'cours/topic.html', {'top': top[0], 'pk': pk, 'kk': kk})
 # class kursDetailView(DetailView):
 #    model = kursu
@@ -25,24 +25,24 @@ def topic_dateil(request, pk, kk):
 
 
 class kursUpdateView(UpdateView):
-    model = kursu
+    model = CoueseTable
     template_name = 'cours/update.html'
 
     form_class = kursuform
 
 class topicUpdateView(UpdateView):
-    model = addtopic
+    model = TopicTable
     template_name = 'cours/update_topic.html'
 
     form_class = topicform
 
 class kursDeleteView(DeleteView):
-    model = kursu
+    model = CoueseTable
     success_url = '/course/'
     template_name = 'cours/cours_delete.html'
 
 class topicDeleteView(DeleteView):
-    model = addtopic
+    model = TopicTable
     success_url = '/course/'
     template_name = 'cours/delete_topic.html'
 
