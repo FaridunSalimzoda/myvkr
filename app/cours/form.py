@@ -1,4 +1,4 @@
-from .models import CoueseTable,TopicTable
+from .models import CoueseTable,TopicTable, QuestionsTable, AnswerTable
 from django.forms import ModelForm, TextInput, Textarea, Select
 
 
@@ -40,4 +40,26 @@ class topicform(ModelForm):
                 'class': 'form_class',
                 'placeholder': 'Название курса'
             }),
+        }
+
+class QuestionsForm(ModelForm):
+    class Meta:
+        model = QuestionsTable
+        fields = ['text']
+        widgets = {
+            'text': Textarea(attrs={
+                'id': 'message',
+                'placeholder': 'Добавьте вопрос'
+            })
+        }
+
+class AnswerForm(ModelForm):
+    class Meta:
+        model = AnswerTable
+        fields = ['text_answer']
+        widgets = {
+            'text-answer': TextInput(attrs={
+                'id': 'message',
+                'placeholder': 'Добавьте ответ'
+            })
         }

@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from .models import CoueseTable, TopicTable, AssignedCoursesTable, RolesTable , TestTable, QuestionsTable, AnswerTable, ExamTable, ResultsTable
-from .form import kursuform, topicform
+from .form import kursuform, topicform, QuestionsForm, AnswerForm
 from django.views.generic import DetailView, UpdateView, DeleteView
 
 
@@ -83,3 +83,32 @@ def adk(request):
     }
     return render(request, 'cours/addKurs.html', data)
 
+def addQuestions(request):
+    error = ''
+    if request.method == 'POST':
+        form = QuestionsForm(request.POST)
+        if form.is_valid():
+            form.save()
+        else:
+            error = 'error'
+    form = QuestionsForm()
+    date = {
+        'form': form,
+        'error': error
+    }
+    return render(request, 'testing/addtest.html', date)
+
+def addAnswer(request):
+    error = ''
+    if request.method == 'POST':
+        form = AnswerForm(request.POST)
+        if form.is_valid():
+            form.save()
+        else:
+            error: 'error'
+    form = AnswerForm()
+    dat = {
+        'form': form,
+        'error': error
+    }
+    return render(request,'testing/addtest.html', dat )
