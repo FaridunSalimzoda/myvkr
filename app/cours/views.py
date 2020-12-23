@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from .models import CoueseTable, TopicTable, AssignedCoursesTable, RolesTable , TestTable, QuestionsTable, AnswerTable, ExamTable, ResultsTable
-from .form import kursuform, topicform, QuestionsForm, AnswerForm
+from .form import CourseTableForm, topicform, QuestionsForm, AnswerForm
 from django.views.generic import DetailView, UpdateView, DeleteView
 
 
@@ -28,7 +28,7 @@ class kursUpdateView(UpdateView):
     model = CoueseTable
     template_name = 'cours/update.html'
 
-    form_class = kursuform
+    form_class = CourseTableForm
 
 class topicUpdateView(UpdateView):
     model = TopicTable
@@ -70,13 +70,13 @@ def newtopic(request, pk: any):
 def adk(request):
     error = ''
     if request.method == 'POST':
-        form = kursuform(request.POST)
+        form = CourseTableForm(request.POST)
         if form.is_valid():
             form.save()
             return redirect('ho')
         else:
             error = 'error'
-    form = kursuform()
+    form = CourseTableForm()
     data = {
         'form': form,
         'error': error

@@ -2,7 +2,7 @@ from .models import CoueseTable,TopicTable, QuestionsTable, AnswerTable
 from django.forms import ModelForm, TextInput, Textarea, Select
 
 
-class kursuform(ModelForm):
+class CourseTableForm(ModelForm):
     class Meta:
         model = CoueseTable
         fields = ['title', 'task', 'teache']
