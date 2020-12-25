@@ -15,8 +15,20 @@
 
 {% if ku %}
 {% for el in ku %}
-{{ el.test_name }}
-{{ el.time }}
+<table class="iksweb">
+			<tbody>
+				<tr>
+					<td class="table_na">Название теста</td>
+					<td class="table_na">Ссылка</td>
+				</tr>
+				<tr>
+					<td class="table_na">{{ el.test_name }}</td>
+					<td class="table_na">
+					<td class="btn btn-success"><a href="{% url 'datail' el.id %}">Перейти</a>
+						</button></td>
+				</tr>
+			</tbody>
+		</table>
 {%endfor%}
 {% else %}
 <p>Вы не добавили курсов</p>

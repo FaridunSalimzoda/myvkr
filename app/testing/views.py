@@ -4,8 +4,8 @@ from .form import QuestionsForm, AnswerForm, TestForm
 
 
 def test_home(request):
-    ku = QuestionsTable.objects.order_by('id')
-    return render(request, 'testing/test_home.html', {'test': ku})
+    ku = TestTable.objects.order_by('id')
+    return render(request, 'testing/test_home.html', {'ku': ku})
 
 
 def addtest(request):
