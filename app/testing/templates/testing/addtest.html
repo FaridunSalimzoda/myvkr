@@ -13,33 +13,13 @@
 	</ul>
 </div>
 
-<div class="user_test">
+<form method="post">
+	{% csrf_token %}
+	{{ form.test_name }}<br>
+	{{ form.time }}
+	{{ form.id_topic }}
 
-			<form id="form2" action="/" method="post">
-
-
-
-			<fieldset>
-
-    {% csrf_token %}
-    {{ form.title }}<br>
-
-    <span>{{ error }}</span>
-
-    <button type="submit" class="btn btn-success">Добавить тему</button>
-
-
-				<p class="first" id="input0">
-
-				</p>
-
-				<div class="add" onclick="addQuestion()" >Добавить вопрос</div>
-				<div class="add" onclick="addAnswer()">Добавить Ответ</div>
-				<p class="submit"><button type="submit">Добавить тест</button></p>
-
-			</fieldset>
-
-		</form>
-
-</div>
+    <button type="submit" class="btn btn-success">Добавить тест</button>
+	<span>{{ error }}</span>
+</form>
 {% endblock %}

@@ -1,29 +1,44 @@
-from django.shortcuts import render
+from django.shortcuts import render,redirect
 from .models import TestTable, QuestionsTable, AnswerTable, ExamTable, ResultsTable
-from .form import QuestionsForm, AnswerForm
+from .form import QuestionsForm, AnswerForm, TestForm
 
 
 def test_home(request):
-    return render(request, 'testing/test_home.html')
+    ku = QuestionsTable.objects.order_by('id')
+    return render(request, 'testing/test_home.html', {'test': ku})
 
 
 def addtest(request):
+    error = ''
+    if request.method == 'POST':
+        form = TestForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('addtest')
+        else:
+            error = 'error'
+    form = TestForm()
+    data = {
+        'form': form,
+        'error': error
+    }
+    return render(request, 'testing/addtest.html', data)
 
-    return render(request, 'testing/addtest.html')
 
-
-def addQuestions(request):
+def addQuestions(request, pk: any):
     error = ''
     if request.method == 'POST':
         form = QuestionsForm(request.POST)
         if form.is_valid():
             form.save()
+            return redirect('kurs')
         else:
             error = 'error'
     form = QuestionsForm()
     date = {
         'form': form,
-        'error': error
+        'error': error,
+        'pk': pk
     }
     return render(request, 'testing/addtest.html', date)
 
