@@ -24,6 +24,7 @@ class QuestionsTable(models.Model):
     number = models.IntegerField('Порядковый номер вопроса') # тут я совневаюсь
     ball = models.IntegerField('Балл за ответ')
 
+
     def __str__(self):
         return f'Вопрос {self.text} теста {self.id_test}'
 

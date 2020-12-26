@@ -32,13 +32,13 @@ def test_dateil(request, pk):
 
 class TestUpdateView(UpdateView):
     model = TestTable
-    template_name = 'testing/test_update.html'
+    template_name = 'testing/update_test.html'
     form_class = TestForm
 
 class TestDeleteView(DeleteView):
     model = TestTable
     success_url = '/testing/'
-    template_name = 'testing/test_delete.html'
+    template_name = 'testing/delete_test.html'
 
 def addQuestions(request, pk: any):
     error = ''
@@ -70,4 +70,4 @@ def addAnswer(request):
         'form': form,
         'error': error
     }
-    return render(request,'testing/addtest.html', dat )
+    return render(request,'testing/addtest.html', dat)
