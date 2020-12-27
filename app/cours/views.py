@@ -73,7 +73,7 @@ def adk(request):
         form = CourseTableForm(request.POST)
         if form.is_valid():
             form.save()
-            return redirect('ho')
+            return redirect('kurs')
         else:
             error = 'error'
     form = CourseTableForm()

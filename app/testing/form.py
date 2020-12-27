@@ -1,5 +1,5 @@
 from .models import QuestionsTable, AnswerTable, TestTable
-from django.forms import ModelForm, TextInput, Textarea, Select, TimeInput
+from django.forms import ModelForm, TextInput, Textarea, Select, TimeInput, IntegerField
 
 class TestForm(ModelForm):
     class Meta:
@@ -24,12 +24,24 @@ class TestForm(ModelForm):
 class QuestionsForm(ModelForm):
     class Meta:
         model = QuestionsTable
-        fields = ['text']
+        fields = ['id_test','text', 'number', 'ball']
         widgets = {
+            'id_topic': Select(attrs={
+                'class': 'form_class',
+                'placeholder': 'Название теста'}),
             'text': Textarea(attrs={
                 'id': 'message',
                 'placeholder': 'Добавьте вопрос'
+            }),
+            'number': TextInput(attrs={
+                'id': 'message',
+                'placeholder': 'Добавьте номер вопроса'
+            }),
+            'ball': TextInput(attrs={
+                'id': 'message',
+                'placeholder': 'Добавьте оченку за вопрос'
             })
+
         }
 
 class AnswerForm(ModelForm):

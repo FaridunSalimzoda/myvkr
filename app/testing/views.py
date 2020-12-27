@@ -15,7 +15,7 @@ def addtest(request):
         form = TestForm(request.POST)
         if form.is_valid():
             form.save()
-            return redirect('addtest')
+            return redirect('test_home')
         else:
             error = 'error'
     form = TestForm()
@@ -28,7 +28,12 @@ def addtest(request):
 def test_dateil(request, pk):
     test = list(TestTable.objects.filter(id=pk).values())
     quest = QuestionsTable.objects.filter(id_test=pk)
-    return render(request, 'testing/test_detail.html', {'quest': quest, 'test': test[0], 'pk': pk})
+    return render(request, 'testing/test_detail.html', {'quest': quest, 'test': test[0], 'pk': pk, })
+
+def question_deteil(request, pk, kk):
+    test = list(QuestionsTable.objects.filter(id=pk).values())
+    ans = AnswerTable.objects.filter(id_test=pk)
+    return render(request, 'testing/quest_deteil.html', {'ans': ans[0],'pk': pk,'kk': kk})
 
 class TestUpdateView(UpdateView):
     model = TestTable
@@ -37,7 +42,7 @@ class TestUpdateView(UpdateView):
 
 class TestDeleteView(DeleteView):
     model = TestTable
-    success_url = '/testing/'
+    success_url = '/test_home/'
     template_name = 'testing/delete_test.html'
 
 def addQuestions(request, pk: any):
@@ -55,7 +60,7 @@ def addQuestions(request, pk: any):
         'error': error,
         'pk': pk
     }
-    return render(request, 'testing/addtest.html', date)
+    return render(request, 'testing/add_quest.html', date)
 
 def addAnswer(request):
     error = ''
