@@ -26,9 +26,9 @@ def addtest(request):
     return render(request, 'testing/addtest.html', data)
 
 def test_dateil(request, pk):
-    ku = list(TopicTable.objects.filter(id=pk).values())
-    test = TestTable.objects.filter(id_topic=pk)
-    return render(request, 'testing/test_detail.html', {'post': ku[0], 'test': test, 'pk': pk})
+    test = list(TestTable.objects.filter(id=pk).values())
+    quest = QuestionsTable.objects.filter(id_test=pk)
+    return render(request, 'testing/test_detail.html', {'quest': quest, 'test': test[0], 'pk': pk})
 
 class TestUpdateView(UpdateView):
     model = TestTable
