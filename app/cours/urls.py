@@ -1,5 +1,6 @@
 from django.urls import path
 from . import views
+
 urlpatterns = [
         path('', views.cour, name='kurs'),
         path('adk', views.adk, name='adk'),

@@ -26,14 +26,17 @@ def addtest(request):
     return render(request, 'testing/addtest.html', data)
 
 def test_dateil(request, pk):
-    test = list(TestTable.objects.filter(id=pk).values())
-    quest = QuestionsTable.objects.filter(id_test=pk)
-    return render(request, 'testing/test_detail.html', {'quest': quest, 'test': test[0], 'pk': pk, })
+    #test = list(TestTable.objects.filter(id=pk).values())
+    #quest = QuestionsTable.objects.filter(id_test=pk)
+    ku = list(TestTable.objects.filter(id=pk).values())
+    top = QuestionsTable.objects.filter(id_test=pk)
+    return render(request, 'testing/test_detail.html', {'post': ku[0], 'top': top, 'pk': pk})
 
 def question_deteil(request, pk, kk):
-    test = list(QuestionsTable.objects.filter(id=pk).values())
+    qi = list(QuestionsTable.objects.filter(id=pk).values())
     ans = AnswerTable.objects.filter(id_test=pk)
-    return render(request, 'testing/quest_deteil.html', {'ans': ans[0],'pk': pk,'kk': kk})
+    return render(request, 'testing/quest_deteil.html', {'ans': ans[0], 'pk': pk, 'kk': kk})
+
 
 class TestUpdateView(UpdateView):
     model = TestTable
