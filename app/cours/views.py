@@ -17,7 +17,7 @@ def detail(request, pk):
 def topic_dateil(request, pk, kk):
     top = TopicTable.objects.filter(id_course=pk)
     ku = list(CoueseTable.objects.filter(id=pk).values())
-    return render(request, 'course/topic.html', {'top': top[0], 'pk': pk, 'kk': kk})
+    return render(request, 'cours/topic.html', {'top': top[0], 'pk': pk, 'kk': kk})
 # class kursDetailView(DetailView):
 #    model = kursu
 #     template_name = 'cours/datail.html'
