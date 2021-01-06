@@ -45,8 +45,8 @@ class TestUpdateView(UpdateView):
 
 class TestDeleteView(DeleteView):
     model = TestTable
-    success_url = '/test_home/'
-    template_name = 'testing/delete_test.html'
+    success_url = '/testing/'
+    template_name = 'testing/test_delete.html'
 
 def addQuestions(request, pk: any):
     error = ''
