@@ -35,16 +35,17 @@ def test_dateil(request, pk):
 def question_deteil(request, pk, kk):
     qi = list(QuestionsTable.objects.filter(id=pk).values())
     ans = AnswerTable.objects.filter(id_question=pk)
-    return render(request, 'testing/quest_deteil.html', {'ans': ans[0], 'pk': pk, 'kk': kk})
+    return render(request, 'testing/quest_deteil.html', {'ans': ans, 'pk': pk, 'kk': kk})
+
 
 class QuestionsUpdateView(UpdateView):
     model = QuestionsTable
-    template_name = 'testing/update_quest.html'
+    template_name = 'testing/quest_update.html'
     form_class  = QuestionsForm
 
 class QustionsDeleteView(DeleteView):
     model = QuestionsTable
-    template_name = 'testing/delete_quest.html'
+    template_name = 'testing/quest_delete.html'
     success_url = '/testing/'
 
 class TestUpdateView(UpdateView):
