@@ -1,0 +1,45 @@
+{% extends 'main/base.html' %}
+
+{% block title %}
+{{ post.title }}
+{% endblock %}
+
+
+
+{% block content %}
+<h1>{{ post.title }}</h1>
+<p>{{ post.task }}</p>
+<p>{{post.teache }}</p>
+<div class="menu_gl">
+	<ul class="menu">
+		<li><a href="{% url 'delete' pk %}">Удалить вопрос</a></li>
+		<li><a href="{% url 'update' pk %}">Изменить вопрос</a></li>
+		<li><a href="{% url 'newtopic' pk %}">Добавить ответ</a></li>
+	</ul>
+</div>
+
+
+
+
+<div class="co">
+
+
+		<table class="iksweb">
+			<tbody>
+          {% if qi %}
+    {% for el in qi %}
+				<tr>
+					<td class="table_na"><a href="{% url 'top_datail' pk el.id %}">{{ el.text }}</a></td>
+					<td class="table_na">{{ el.number }}</td>
+				</tr>
+		{%endfor%}
+			</tbody>
+		</table>
+
+
+   {% else %}
+   <p>Вы не добавили темы</p>
+   {%endif%}
+   {% endblock %}
+
+   
