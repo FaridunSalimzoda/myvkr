@@ -7,9 +7,9 @@
 
 
 {% block content %}
-<h1>{{ post.title }}</h1>
-<p>{{ post.task }}</p>
-<p>{{post.teache }}</p>
+<h1>Название курса: {{ post.title }}</h1>
+<h3>Описание курса: {{ post.task }}</р>
+<p>Преподаватель: {{post.teache }}</p>
 <div class="menu_gl">
 	<ul class="menu">
 		<li><a href="{% url 'delete' pk %}">Удалить курс</a></li>
@@ -29,8 +29,8 @@
           {% if top %}
     {% for el in top %}
 				<tr>
-					<td class="table_na"><a href="{% url 'top_datail' pk el.id %}">{{ el.title }}</a></td>
-					<td class="table_na"></td>
+					<td class="table_na">{{ el.title }}</td>
+					<td class="btn btn-success"><a href="{% url 'top_datail' pk el.id %}">Перейти</a></td>
 				</tr>
 		{%endfor%}
 			</tbody>
