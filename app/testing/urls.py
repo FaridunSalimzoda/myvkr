@@ -9,7 +9,10 @@ urlpatterns = [
     path('<int:pk>/add_questions', views.addQuestions, name= 'add_quest'),
     path('<int:pk>/test_update', views.TestUpdateView.as_view(), name='test_update'),
     path('<int:pk>/test_delete', views.TestDeleteView.as_view(), name='test_delete'),
-    path('<int:pk>/<int:kk>/', views.question_deteil, name='qust_detele')
+    path('<int:pk>/<int:kk>/', views.question_deteil, name='qust_detele'),
+    path('<int:pk>/<int:kk>/quest_update', views.QuestionsUpdateView, name = 'quest_update'),
+    path('<int:pk>/<int:kk>/quest_delete', views.QustionsDeleteView, name='quest_delete')
+
 
 
 ]

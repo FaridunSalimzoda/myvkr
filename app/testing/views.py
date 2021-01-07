@@ -37,6 +37,15 @@ def question_deteil(request, pk, kk):
     ans = AnswerTable.objects.filter(id_question=pk)
     return render(request, 'testing/quest_deteil.html', {'ans': ans[0], 'pk': pk, 'kk': kk})
 
+class QuestionsUpdateView(UpdateView):
+    model = QuestionsTable
+    template_name = 'testing/update_quest.html'
+    form_class  = QuestionsForm
+
+class QustionsDeleteView(DeleteView):
+    model = QuestionsTable
+    template_name = 'testing/delete_quest.html'
+    success_url = '/testing/'
 
 class TestUpdateView(UpdateView):
     model = TestTable
