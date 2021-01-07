@@ -28,9 +28,15 @@
 			<tbody>
           {% if top %}
     {% for el in top %}
+                <tr class="table_na">
+                    <td>Номер вопроса</td>
+                    <td>Вопрос</td>
+                    <td>Балл за вопрос</td>
+                </tr>
 				<tr>
-					<td class="table_na"><a href="{% url 'top_datail' pk el.id %}">{{ el.text }}</a></td>
-					<td class="table_na"></td>
+                    <td>{{ el.number }}</td>
+					<td class="table_na"><a href="{% url 'qust_detele' pk el.id %}">{{ el.text }}</a></td>
+					<td class="table_na">{{ el.ball }}</td>
 				</tr>
 		{%endfor%}
 			</tbody>

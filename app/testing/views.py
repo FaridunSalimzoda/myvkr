@@ -34,8 +34,8 @@ def test_dateil(request, pk):
 
 def question_deteil(request, pk, kk):
     qi = list(QuestionsTable.objects.filter(id=pk).values())
-    ans = AnswerTable.objects.filter(id_test=pk)
-    return render(request, 'testing/quest_deteil.html', {'iq': qi, 'ans': ans[0], 'pk': pk, 'kk': kk})
+    ans = AnswerTable.objects.filter(id_question=pk)
+    return render(request, 'testing/quest_deteil.html', {'qi': qi, 'ans': ans[0], 'pk': pk, 'kk': kk})
 
 
 class TestUpdateView(UpdateView):
