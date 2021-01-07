@@ -26,7 +26,7 @@ class QuestionsForm(ModelForm):
         model = QuestionsTable
         fields = ['id_test','text', 'number', 'ball']
         widgets = {
-            'id_topic': Select(attrs={
+            'id_test': Select(attrs={
                 'class': 'form_class',
                 'placeholder': 'Название теста'}),
             'text': Textarea(attrs={
@@ -39,7 +39,7 @@ class QuestionsForm(ModelForm):
             }),
             'ball': TextInput(attrs={
                 'id': 'message',
-                'placeholder': 'Добавьте оченку за вопрос'
+                'placeholder': 'Добавьте оценку за вопрос'
             })
 
         }
