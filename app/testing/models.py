@@ -49,6 +49,8 @@ class ExamTable(models.Model):
     id_questions = models.ForeignKey(QuestionsTable, on_delete=models.CASCADE)
     id_answer = models.ForeignKey(AnswerTable, on_delete=models.CASCADE)
 
+
+
 class ResultsTable(models.Model):
     id_test = models.ForeignKey(TestTable, on_delete=models.CASCADE)
     id_user = models.ForeignKey(RolesTable, on_delete=models.CASCADE)

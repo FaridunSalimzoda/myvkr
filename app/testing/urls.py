@@ -11,7 +11,11 @@ urlpatterns = [
     path('<int:pk>/test_delete', views.TestDeleteView.as_view(), name='test_delete'),
     path('<int:pk>/<int:kk>/', views.question_deteil, name='qust_detele'),
     path('<int:pk>/<int:kk>/quest_update', views.QuestionsUpdateView.as_view(), name = 'quest_update'),
-    path('<int:pk>/<int:kk>/quest_delete', views.QustionsDeleteView.as_view(), name='quest_delete')
+    path('<int:pk>/<int:kk>/quest_delete', views.QustionsDeleteView.as_view(), name='quest_delete'),
+    path('<int:pk>/add_answer', views.addAnswer, name = 'add_answer'),
+
+
+
 
 
 

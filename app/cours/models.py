@@ -49,3 +49,6 @@ class RolesTable(models.Model):
 class AssignedCoursesTable(models.Model):
     id_course = models.ForeignKey(CoueseTable, on_delete=models.CASCADE)
     id_user = models.ForeignKey(RolesTable, on_delete=models.CASCADE)
+    class Meta:
+        verbose_name = 'Запись на курс'
+        verbose_name_plural = 'Записи на курс'

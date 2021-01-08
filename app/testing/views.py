@@ -38,6 +38,7 @@ def question_deteil(request, pk, kk):
     return render(request, 'testing/quest_deteil.html', {'ans': ans, 'pk': pk, 'kk': kk})
 
 
+
 class QuestionsUpdateView(UpdateView):
     model = QuestionsTable
     template_name = 'testing/quest_update.html'
@@ -75,7 +76,7 @@ def addQuestions(request, pk: any):
     }
     return render(request, 'testing/add_quest.html', date)
 
-def addAnswer(request):
+def addAnswer(request, pk: any):
     error = ''
     if request.method == 'POST':
         form = AnswerForm(request.POST)
@@ -86,6 +87,8 @@ def addAnswer(request):
     form = AnswerForm()
     dat = {
         'form': form,
-        'error': error
+        'error': error,
+        'pk': pk
     }
-    return render(request,'testing/addtest.html', dat)
+    return render(request,'testing/add_answer.html', dat)
+

@@ -1,7 +1,7 @@
 {% extends 'main/base.html' %}
 
 {% block title %}
-{{ post.title }}
+Ответы
 {% endblock %}
 
 
@@ -14,7 +14,7 @@
 	<ul class="menu">
 		<li><a href="{% url 'quest_delete' kk 1%}">Удалить вопрос</a></li>
 		<li><a href="{% url 'quest_update' kk 1%}">Изменить вопрос</a></li>
-		<li><a href="#">Добавить ответ</a></li>
+		<li><a href="{% url 'add_answer' pk %}">Добавить ответ</a></li>
 	</ul>
 </div>
 
@@ -26,11 +26,11 @@
 
 		<table class="iksweb">
 			<tbody>
-          {% if qi %}
-    {% for el in qi %}
+          {% if ans %}
+    {% for el in ans %}
 				<tr>
-					<td class="table_na"><a href="{% url 'top_datail' pk el.id %}">{{ el.text }}</a></td>
-					<td class="table_na">{{ el.number }}</td>
+					<td class="table_na"><a href="{% url 'top_datail' pk el.id %}">{{ el.text_answer }}</a></td>
+					<td class="table_na">{{ el.try_answer }}</td>
 				</tr>
 		{%endfor%}
 			</tbody>
@@ -38,7 +38,7 @@
 
 
    {% else %}
-   <p>Вы не добавили темы</p>
+   <p>Вы не добавили ответов</p>
    {%endif%}
    {% endblock %}
 

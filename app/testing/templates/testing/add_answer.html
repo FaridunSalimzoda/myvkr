@@ -15,7 +15,9 @@
 
 <form method="post">
 	{% csrf_token %}
-	{{ form.text_answer }}<br>
+    {{ form.text_answer }}<br>
+    {{ form.id_question }}
+    {{ form.try_answer }}
 
 
     <button type="submit" class="btn btn-success">Добавить тест</button>
