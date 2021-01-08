@@ -1,3 +1,1 @@
-# myvkr
-
-Graduate work on Django
+Project SDO by VKR
