@@ -12,9 +12,8 @@
 <p>{{post.teache }}</p>
 <div class="menu_gl">
 	<ul class="menu">
-		<li><a href="{% url 'quest_delete' kk 1%}">Удалить вопрос</a></li>
-		<li><a href="{% url 'quest_update' kk 1%}">Изменить вопрос</a></li>
-		<li><a href="{% url 'add_answer' pk %}">Добавить ответ</a></li>
+		<li><a href="{% url 'answer_delete' tt 1%}">Удалить вопрос</a></li>
+		<li><a href="{% url 'answer_update' tt 1%}">Изменить вопрос</a></li>
 	</ul>
 </div>
 
@@ -29,7 +28,7 @@
           {% if ans %}
     {% for el in ans %}
 				<tr>
-					<td class="table_na"><a href="{% url 'top_datail' pk el.id %}">{{ el.text_answer }}</a></td>
+					<td class="table_na"><a href="{% url 'answer_detele' tt el.id %}">{{ el.text_answer }}</a></td>
 					<td class="table_na">{{ el.try_answer }}</td>
 				</tr>
 		{%endfor%}

@@ -1,0 +1,14 @@
+{% extends 'main/base.html' %}
+
+{% block title %}
+Удаление ответа
+{% endblock %}
+
+{% block content %}
+<form method="post">
+    {% csrf_token %}
+ <h1>Вы уверены, что хотите удалить ответ {{ top.title }}?</h1>
+    <button type="submit" class="btn btn-success">Удалить ответ</button>
+    <a href="{% url 'test_home' %}">Перейти к тестам</a>
+</form>
+{% endblock %}

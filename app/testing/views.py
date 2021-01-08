@@ -34,10 +34,23 @@ def test_dateil(request, pk):
 
 def question_deteil(request, pk, kk):
     qi = list(QuestionsTable.objects.filter(id=pk).values())
-    ans = AnswerTable.objects.filter(id_question=pk)
+    ans = AnswerTable.objects.filter(id_question=kk)
     return render(request, 'testing/quest_deteil.html', {'ans': ans, 'pk': pk, 'kk': kk})
 
+def answer_detele(request, kk, tt):
+    ans =  list(AnswerTable.objects.filter(id=tt).values())
+    return render(request, 'testing/answer_detele.html', {'ans': ans, 'kk': kk, 'tt': tt})
 
+
+class AnswerUpdateView(UpdateView):
+    model = AnswerTable
+    template_name = 'testing/answer_update.html'
+    form_class = AnswerForm
+
+class AnswerDeleteView(DeleteView):
+    model = AnswerTable
+    template_name = 'testing/answer_delete.html'
+    success_url = '/testing/'
 
 class QuestionsUpdateView(UpdateView):
     model = QuestionsTable
