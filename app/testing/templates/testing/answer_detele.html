@@ -12,8 +12,8 @@
 <p>{{post.teache }}</p>
 <div class="menu_gl">
 	<ul class="menu">
-		<li><a href="{% url 'quest_delete' pk kk %}">Удалить вопрос</a></li>
-		<li><a href="{% url 'quest_update' pk kk %}">Изменить вопрос</a></li>
+		<li><a href="{% url 'answer_delete' pk kk tt %}">Удалить вопрос</a></li>
+		<li><a href="{% url 'answer_update' pk kk tt %}">Изменить вопрос</a></li>
 	</ul>
 </div>
 
@@ -28,7 +28,7 @@
           {% if ans %}
     {% for el in ans %}
 				<tr>
-					<td class="table_na"><a href="{% url 'answer_detele' pk kk el.id %}">{{ el.text_answer }}</a></td>
+					<td class="table_na">{{ el.id }}</a></td>
 					<td class="table_na">{{ el.try_answer }}</td>
 				</tr>
 		{%endfor%}

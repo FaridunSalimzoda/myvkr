@@ -14,8 +14,8 @@ urlpatterns = [
     path('<int:pk>/<int:kk>/quest_delete', views.QustionsDeleteView.as_view(), name='quest_delete'),
     path('<int:pk>/add_answer', views.addAnswer, name = 'add_answer'),
     path('<int:pk>/<int:kk>/<int:tt>/', views.answer_detele, name='answer_detele'),
-    path('<int:pk>/<int:kk>/<int:tt>/delete_answer', views.AnswerDeleteView.as_view(), name='answer_delete'),
-    path('<int:pk>/<int:kk>/<int:tt>/update_answer', views.AnswerUpdateView.as_view(), name='answer_update')
+    path('<int:pk>/<int:kk>/<int:tt>/answer_delete', views.AnswerDeleteView.as_view(), name='answer_delete'),
+    path('<int:pk>/<int:kk>/<int:tt>/answer_update', views.AnswerUpdateView.as_view(), name='answer_update')
 
 
 

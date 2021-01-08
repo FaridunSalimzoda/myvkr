@@ -37,9 +37,9 @@ def question_deteil(request, pk, kk):
     ans = AnswerTable.objects.filter(id_question=kk)
     return render(request, 'testing/quest_deteil.html', {'ans': ans, 'pk': pk, 'kk': kk})
 
-def answer_detele(request, kk, tt):
+def answer_detele(request, pk, kk, tt):
     ans =  list(AnswerTable.objects.filter(id=tt).values())
-    return render(request, 'testing/answer_detele.html', {'ans': ans, 'kk': kk, 'tt': tt})
+    return render(request, 'testing/answer_detele.html', {'ans': ans, 'pk': pk, 'kk': kk, 'tt': tt})
 
 
 class AnswerUpdateView(UpdateView):
