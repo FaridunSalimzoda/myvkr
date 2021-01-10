@@ -49,7 +49,7 @@ class AnswerForm(ModelForm):
         model = AnswerTable
         fields = ['text_answer', 'try_answer', 'id_question']
         widgets = {
-            'text-answer': TextInput(attrs={
+            'text_answer': TextInput(attrs={
                 'id': 'message',
                 'placeholder': 'Добавьте ответ'
             }),

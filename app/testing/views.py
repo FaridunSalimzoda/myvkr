@@ -1,4 +1,4 @@
-from django.shortcuts import render,redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from .models import TestTable, QuestionsTable, AnswerTable, ExamTable, ResultsTable
 from .form import QuestionsForm, AnswerForm, TestForm
 from django.views.generic import UpdateView,DeleteView
@@ -47,20 +47,37 @@ class AnswerUpdateView(UpdateView):
     template_name = 'testing/answer_update.html'
     form_class = AnswerForm
 
+    def get_object(self, *args, **kwargs):
+        question = get_object_or_404(AnswerTable, id_question=self.kwargs['kk'], id=self.kwargs['tt'])
+        return question
+
 class AnswerDeleteView(DeleteView):
     model = AnswerTable
     template_name = 'testing/answer_delete.html'
     success_url = '/testing/'
+
+    def get_object(self, *args, **kwargs):
+        question = get_object_or_404(AnswerTable, id_question=self.kwargs['kk'], id=self.kwargs['tt'])
+        return question
 
 class QuestionsUpdateView(UpdateView):
     model = QuestionsTable
     template_name = 'testing/quest_update.html'
     form_class  = QuestionsForm
 
-class QustionsDeleteView(DeleteView):
+    def get_object(self, *args, **kwargs):
+        question = get_object_or_404(QuestionsTable, id_test=self.kwargs['pk'], id=self.kwargs['kk'])
+        return question
+
+class QuestionsDeleteView(DeleteView):
     model = QuestionsTable
     template_name = 'testing/quest_delete.html'
     success_url = '/testing/'
+
+    def get_object(self, *args, **kwargs):
+        question = get_object_or_404(QuestionsTable, id_test=self.kwargs['pk'], id=self.kwargs['kk'])
+        return question
+
 
 class TestUpdateView(UpdateView):
     model = TestTable

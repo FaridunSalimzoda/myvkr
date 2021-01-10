@@ -11,7 +11,7 @@ class TestTable(models.Model):
         return self.test_name
 
     def get_absolute_url(self):
-        return f'/testing/{self.id}'
+        return f'/test/{self.id}'
 
     class Meta:
         verbose_name = 'Тест'
@@ -29,7 +29,7 @@ class QuestionsTable(models.Model):
         return f'Вопрос {self.text} теста {self.id_test}'
 
     def get_absolute_url(self):
-        return f'/testing/{self.id_test.id}/{self.id}'
+        return f'/test/{self.id_test.id}/{self.id}'
     class Meta:
         verbose_name = 'Вопрос'
         verbose_name_plural = 'Вопросы'
@@ -41,6 +41,13 @@ class AnswerTable(models.Model):
     id_question = models.ForeignKey(QuestionsTable, on_delete=models.CASCADE)
     text_answer = models.TextField('Ответ на вопрос', max_length=60)
     try_answer = models.BooleanField("Правильный ответ", max_length=60)
+
+    def __str__(self):
+        return f'Ответ {self.text_answer} на вопрос {self.id_question} теста {self.id_question.id_test}'
+
+    def get_absolute_url(self):
+        return f'/test/{self.id_question.id_test.id}/{self.id_question.id}/{self.id}'
+
     class Meta:
         verbose_name = 'Ответ'
         verbose_name_plural = 'Ответы'
