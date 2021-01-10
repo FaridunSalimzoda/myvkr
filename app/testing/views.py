@@ -54,7 +54,7 @@ class AnswerUpdateView(UpdateView):
 class AnswerDeleteView(DeleteView):
     model = AnswerTable
     template_name = 'testing/answer_delete.html'
-    success_url = '/testing/'
+    success_url = '/test/'
 
     def get_object(self, *args, **kwargs):
         question = get_object_or_404(AnswerTable, id_question=self.kwargs['kk'], id=self.kwargs['tt'])
@@ -72,7 +72,7 @@ class QuestionsUpdateView(UpdateView):
 class QuestionsDeleteView(DeleteView):
     model = QuestionsTable
     template_name = 'testing/quest_delete.html'
-    success_url = '/testing/'
+    success_url = '/test/'
 
     def get_object(self, *args, **kwargs):
         question = get_object_or_404(QuestionsTable, id_test=self.kwargs['pk'], id=self.kwargs['kk'])
@@ -86,7 +86,7 @@ class TestUpdateView(UpdateView):
 
 class TestDeleteView(DeleteView):
     model = TestTable
-    success_url = '/testing/'
+    success_url = '/test/'
     template_name = 'testing/test_delete.html'
 
 def addQuestions(request, pk: any):
@@ -95,7 +95,7 @@ def addQuestions(request, pk: any):
         form = QuestionsForm(request.POST)
         if form.is_valid():
             form.save()
-            return redirect('kurs')
+            return redirect('test_home')
         else:
             error = 'error'
     form = QuestionsForm()
@@ -112,6 +112,7 @@ def addAnswer(request, pk: any):
         form = AnswerForm(request.POST)
         if form.is_valid():
             form.save()
+            return redirect('test_home')
         else:
             error: 'error'
     form = AnswerForm()
@@ -121,4 +122,6 @@ def addAnswer(request, pk: any):
         'pk': pk
     }
     return render(request,'testing/add_answer.html', dat)
+
+
 

@@ -3,6 +3,7 @@ from .models import CoueseTable, TopicTable, AssignedCoursesTable,RolesTable
 
 class adminCoursTable(admin.ModelAdmin):
     list_display = ('id', 'title', 'task', 'teache')
+    list_filter =('title', 'task', 'teache')
 
 class adminTopicTable(admin.ModelAdmin):
     list_display = ('id', 'title', 'task', 'id_course')

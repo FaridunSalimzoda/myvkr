@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from .models import CoueseTable, TopicTable, AssignedCoursesTable, RolesTable
-from .form import CourseTableForm, topicform
+from .form import CourseTableForm, topicform, RecordtoCourse
 from django.views.generic import DetailView, UpdateView, DeleteView
 
 
@@ -8,6 +8,9 @@ def cour(request):
     ku = CoueseTable.objects.order_by('id')
     return render(request, 'cours/cours_home.html', {'ku': ku})
 
+def user_cours(request):
+    ku = CoueseTable.objects.order_by('id')
+    return render(request, 'cours/user_cours.html', {'ku': ku})
 
 def detail(request, pk):
     ku = list(CoueseTable.objects.filter(id=pk).values())
@@ -83,3 +86,18 @@ def adk(request):
     }
     return render(request, 'cours/addKurs.html', data)
 
+def ReccordToCourse(request):
+    error = ''
+    if request.method == 'POST':
+        form = RecordtoCourse(request.POST)
+        if form.is_valid():
+            form.save()
+            return  redirect('kurs')
+        else:
+            error = 'error'
+    form = RecordtoCourse()
+    data = {
+        'form': form,
+        'error': error
+    }
+    return render(request, 'cours/RecordToCourse.html', data)

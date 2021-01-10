@@ -1,7 +1,7 @@
 {% extends 'main/base.html' %}
 
 {% block title %}
-Ответы
+{{ post.title}}
 {% endblock %}
 
 
@@ -12,8 +12,8 @@
 <p>{{post.teache }}</p>
 <div class="menu_gl">
 	<ul class="menu">
-		<li><a href="{% url 'answer_delete' pk kk tt %}">Удалить вопрос</a></li>
-		<li><a href="{% url 'answer_update' pk kk tt %}">Изменить вопрос</a></li>
+		<li><a href="{% url 'answer_delete' pk kk tt %}">Удалить ответ</a></li>
+		<li><a href="{% url 'answer_update' pk kk tt %}">Изменить ответ</a></li>
 	</ul>
 </div>
 
