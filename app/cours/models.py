@@ -7,6 +7,7 @@ class CoueseTable(models.Model):
     task = models.TextField('Описание курса', max_length=250)
     teache = models.CharField('Преподаватель', max_length=50)
 
+
     def __str__(self):
         return self.title
 

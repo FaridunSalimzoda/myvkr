@@ -30,6 +30,7 @@ class QuestionsTable(models.Model):
 
     def get_absolute_url(self):
         return f'/test/{self.id_test.id}/{self.id}'
+
     class Meta:
         verbose_name = 'Вопрос'
         verbose_name_plural = 'Вопросы'
