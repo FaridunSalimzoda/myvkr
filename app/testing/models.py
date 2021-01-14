@@ -1,5 +1,6 @@
 from django.db import models
-from cours.models import TopicTable, RolesTable
+from cours.models import TopicTable
+from django.contrib.auth.models import User
 # Create your models here.
 
 class TestTable(models.Model):
@@ -61,7 +62,7 @@ class ExamTable(models.Model):
 
 class ResultsTable(models.Model):
     id_test = models.ForeignKey(TestTable, on_delete=models.CASCADE)
-    id_user = models.ForeignKey(RolesTable, on_delete=models.CASCADE)
+    id_user = models.ForeignKey(User, on_delete=models.CASCADE)
     id_exam = models.ForeignKey(ExamTable, on_delete=models.CASCADE)
     estimation = models.IntegerField()
     timer = models.TimeField()

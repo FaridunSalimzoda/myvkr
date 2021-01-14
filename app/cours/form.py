@@ -1,5 +1,5 @@
-from .models import CoueseTable,TopicTable, AssignedCoursesTable
-from django.forms import ModelForm, TextInput, Textarea, Select
+from .models import CoueseTable,TopicTable
+from django.forms import ModelForm, TextInput, Textarea, Select, CheckBox
 
 
 class CourseTableForm(ModelForm):
@@ -39,18 +39,5 @@ class topicform(ModelForm):
             'id_course': Select(attrs={
                 'class': 'form_class',
                 'placeholder': 'Название курса'
-            }),
-        }
-class RecordtoCourse(ModelForm):
-    class Meta:
-        model = AssignedCoursesTable
-        fields = ['id_course', 'id_user']
-        widgets = {
-            'id_course': Select(attrs={
-                'class': 'form_class',
-                'placeholder': 'Название курса'
-            }), 'id_user': Select(attrs={
-                'class': 'form_class',
-                'placeholder': 'Пользователь'
             }),
         }

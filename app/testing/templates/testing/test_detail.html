@@ -7,45 +7,25 @@
 
 
 {% block content %}
-<h1>{{ post.title }}</h1>
+<h1>{{ test_name }}</h1>
 <p>{{ post.task }}</p>
 <p>{{post.teache }}</p>
 <div class="menu_gl">
-    <ul class="menu">
-        <li><a href="{% url 'test_delete' pk %}">Удалить тест</a></li>
-        <li><a href="{% url 'test_update' pk %}">Изменить тест</a></li>
-        <li><a href="{% url 'add_quest' pk %}">Добавить вопрос</a></li>
-    </ul>
+	<ul class="menu">
+		<li><a href="{% url 'delete' pk %}">Удалить курс</a></li>
+		<li><a href="{% url 'update' pk %}">Изменить курс</a></li>
+		<li><a href="{% url 'newtopic' pk %}">Добавить вопрос</a></li>
+	</ul>
 </div>
 
 
 
+{% if quest %}
+{% for el in quest %}
+{{ el.test_name }}
+{% endfor %}
+   {% else %}
+   <p>Вы не добавили тесты</p>
+   {%endif%}
+   {% endblock %}
 
-<div class="co">
-
-
-    <table class="iksweb">
-        <tbody>
-            {% if top %}
-            {% for el in top %}
-            <tr class="table_na">
-                <td>Номер вопроса</td>
-                <td>Вопрос</td>
-                <td>Балл за вопрос</td>
-            </tr>
-            <tr>
-                <td>{{ el.number }}</td>
-                <td class="table_na">{{ el.text }}</td>
-                <td class="table_na">{{ el.ball }}</td>
-                <td class="btn btn-success"><a href="{% url 'qust_detele' pk el.id %}">Перейти</a>
-                    </button></td>
-            </tr>
-            {%endfor%}
-        </tbody>
-    </table>
-
-
-    {% else %}
-    <p>Вы не добавили темы</p>
-    {%endif%}
-    {% endblock %}

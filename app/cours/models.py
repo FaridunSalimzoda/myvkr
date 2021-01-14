@@ -6,7 +6,10 @@ class CoueseTable(models.Model):
     title = models.CharField('Название курса', max_length=75)
     task = models.TextField('Описание курса', max_length=250)
     teache = models.CharField('Преподаватель', max_length=50)
+    users = models.ManyToManyField(User)
 
+    def get_users(self):
+        return "\n".join([u.username for u in self.users.all()])
 
     def __str__(self):
         return self.title
@@ -36,21 +39,3 @@ class TopicTable(models.Model):
         verbose_name = 'Тему'
         verbose_name_plural = 'Темы'
 
-
-class RolesTable(models.Model):
-    Surname = models.CharField('Фамилия', max_length=30)
-    Name = models.CharField('Имя', max_length=30)
-    Patromic = models.CharField('Отчество', max_length=40)
-    email = models.CharField('E-mail', max_length=40)
-    user_status = models.CharField('Статус', max_length=30)
-
-    class Meta:
-        verbose_name = 'Пользователь'
-        verbose_name_plural = 'Пользователи'
-
-class AssignedCoursesTable(models.Model):
-    id_course = models.ForeignKey(CoueseTable, on_delete=models.CASCADE)
-    id_user = models.ForeignKey(User, on_delete=models.CASCADE)
-    class Meta:
-        verbose_name = 'Запись на курс'
-        verbose_name_plural = 'Записи на курс'
