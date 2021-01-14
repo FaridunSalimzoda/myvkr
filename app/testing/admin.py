@@ -1,7 +1,5 @@
 from django.contrib import admin
 from .models import TestTable, QuestionsTable, AnswerTable, ExamTable, ResultsTable
-
-
 # Register your models here.
 
 

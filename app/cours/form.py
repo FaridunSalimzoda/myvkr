@@ -1,5 +1,5 @@
 from .models import CoueseTable,TopicTable
-from django.forms import ModelForm, TextInput, Textarea, Select, CheckBox
+from django.forms import ModelForm, TextInput, Textarea, Select
 
 
 class CourseTableForm(ModelForm):

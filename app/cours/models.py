@@ -38,4 +38,3 @@ class TopicTable(models.Model):
 
         verbose_name = 'Тему'
         verbose_name_plural = 'Темы'
-

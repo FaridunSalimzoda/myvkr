@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from .models import CoueseTable, TopicTable
-from django.views.generic import DetailView, UpdateView, DeleteView
 from .form import CourseTableForm, topicform
+from django.views.generic import DetailView, UpdateView, DeleteView
 
 
 def cour(request):
@@ -85,4 +85,3 @@ def adk(request):
         'error': error
     }
     return render(request, 'cours/addKurs.html', data)
-

@@ -1,13 +1,13 @@
 {% extends 'main/base.html' %}
 
 {% block title %}
-{{ post.title }}
+{{ test_name }}
 {% endblock %}
 
 
 
 {% block content %}
-<h1>{{ test_name }}</h1>
+<h1>{{ post.title }}</h1>
 <p>{{ post.task }}</p>
 <p>{{post.teache }}</p>
 <div class="menu_gl">
@@ -20,6 +20,7 @@
 
 
 
+
 {% if quest %}
 {% for el in quest %}
 {{ el.test_name }}
@@ -28,4 +29,3 @@
    <p>Вы не добавили тесты</p>
    {%endif%}
    {% endblock %}
-
