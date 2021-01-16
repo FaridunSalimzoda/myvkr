@@ -14,7 +14,6 @@
 	<ul class="menu">
 		<li><a href="{% url 'quest_delete' pk kk %}">Удалить вопрос</a></li>
 		<li><a href="{% url 'quest_update' pk kk %}">Изменить вопрос</a></li>
-		
 		<li><a href="{% url 'add_answer' pk %}">Добавить ответ</a></li>
 	</ul>
 </div>
@@ -25,22 +24,27 @@
 <div class="co">
 
 
-		<table class="iksweb">
-			<tbody>
           {% if ans %}
     {% for el in ans %}
-				<tr>
-					<td class="table_na"><a href="{% url 'answer_detele' pk kk el.id %}">{{ el.text_answer }}</a></td>
-					<td class="table_na">{{ el.try_answer }}</td>
-				</tr>
-		{%endfor%}
-			</tbody>
-		</table>
+		
 
+
+		<table class="tftable">
+			<tr>
+				<th class="table_na">Вопрос курса  </th>
+				<th>Ссылка</th>
+
+			</tr>
+			<tr>
+				<td class="p-2 text-dark">{{ el.text_answer }}</td>
+				<td class="p-2 text-dark"><a href="{% url 'answer_detele' pk kk el.id %}">Перейти</a></td>
+			</tr>
+		</table>
+		{%endfor%}
 
    {% else %}
    <p>Вы не добавили ответов</p>
    {%endif%}
    {% endblock %}
-
+</div>
    

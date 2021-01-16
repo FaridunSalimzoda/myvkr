@@ -14,18 +14,38 @@
 	<ul class="menu">
 		<li><a href="{% url 'delete' pk %}">Удалить курс</a></li>
 		<li><a href="{% url 'update' pk %}">Изменить курс</a></li>
-		<li><a href="{% url 'newtopic' pk %}">Добавить вопрос</a></li>
+		<li><a href="{% url 'add_quest' pk %}">Добавить вопрос</a></li>
 	</ul>
 </div>
 
 
 
 
-{% if quest %}
-{% for el in quest %}
-{{ el.test_name }}
-{% endfor %}
-   {% else %}
-   <p>Вы не добавили тесты</p>
-   {%endif%}
-   {% endblock %}
+
+<div class="co">
+			{% if top %}
+			{% for el in top %}
+
+
+
+	<table class="tftable">
+		<tr>
+			<th class="table_na">Название вопроса</th>
+			<th>Номер вопроса</th>
+			<th>Балл за вопрос</th>
+			<th>Ссылка</th>
+		</tr>
+		<tr>
+			<td class="p-2 text-dark">{{ el.text }}</td>
+			<td class="p-2 text-dark">{{ el.number }}</td>
+			<td class="p-2 text-dark">{{ el.ball }}</td>
+			<td class="p-2 text-dark"><a href="{% url 'qust_detele' pk el.id %} ">Перейти</a></td>
+		</tr>
+	</table>
+		{%endfor%}
+
+	{% else %}
+	<p>Вы не добавили вопрос</p>
+	{%endif%}
+	{% endblock %}
+</div>

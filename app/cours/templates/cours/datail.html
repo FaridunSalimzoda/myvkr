@@ -23,21 +23,23 @@
 
 
 <div class="co">
-
-
-		<table class="iksweb">
-			<tbody>
-          {% if top %}
+      {% if top %}
     {% for el in top %}
-				<tr>
-					<td class="table_na">{{ el.title }}</td>
-					<td class="btn btn-success"><a href="{% url 'top_datail' pk el.id %}">Перейти</a></td>
-				</tr>
-		{%endfor%}
-			</tbody>
+
+		<table class="tftable">
+			<tr>
+				<th class="p-2 text-dark">Название темы</th>
+				<th class="p-2 text-dark">Описание темы</th>
+				<th class="p-2 text-dark">Ссылка</th>
+		
+			</tr>
+			<tr>
+				<td class="p-2 text-dark">{{ el.title }}</td>
+				<td class="p-2 text-dark">{{ el.task }}</td>
+				<td class="p-2 text-dark"><a href="{% url 'top_datail' pk el.id %}">Перейти</a></td>
+			</tr>
 		</table>
-
-
+{%endfor%}
    {% else %}
    <p>Вы не добавили темы</p>
    {%endif%}

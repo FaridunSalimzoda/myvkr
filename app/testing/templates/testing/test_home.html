@@ -15,19 +15,17 @@
 
 {% if ku %}
 {% for el in ku %}
-<table class="iksweb">
-			<tbody>
-				<tr>
-					<td class="table_na">Название теста</td>
-					<td class="table_na">Ссылка</td>
-				</tr>
-				<tr>
-					<td class="table_na">{{ el.test_name }}</td>
-					<td class="btn btn-success"><a href="{% url 'test_dateil' el.id %}">Перейти</a>
-						</button></td>
-				</tr>
-			</tbody>
-		</table>
+
+	<table class="tftable">
+		<tr>
+			<th class="table_na">Название теста</th>
+			<th>Ссылка</th>
+		</tr>
+		<tr>
+			<td class="p-2 text-dark">{{ el.test_name }}</td>
+			<td class="p-2 text-dark"><a href="{% url 'test_dateil' el.id %}">Перейти</a></td>
+		</tr>
+	</table>
 {%endfor%}
 {% else %}
 <p>Вы не добавили тест</p>
