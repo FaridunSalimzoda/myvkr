@@ -16,8 +16,8 @@
 <form method="post">
 	{% csrf_token %}
     {{ form.text_answer }}<br>
-    {{ form.id_question }}
-    {{ form.try_answer }}
+    {{ form.id_question }}<br>
+    <p>Вреный ответ {{ form.try_answer }}</p><br>
 
 
     <button type="submit" class="btn btn-success">Добавить ответ</button>
