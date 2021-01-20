@@ -9,17 +9,22 @@
 
 {% block content %}
 <div class="co">
-
-
+ {% if ans %}
+       {% for el in ans %}
+    <p>{{ el.text_answer }}</p>
+    {%endfor%}
+    {% else %}
+    <p>no</p>
+{%endif%}
           {% if quest %}
-            {% if ans %}
+
     {% for el in quest %}
-            {% for el in ans %}
+{{ el.text }}
         <ul>
             <li><input type="radio"></li>
         </ul>
 
-{%endfor%}
+
 		{%endfor%}
 
    {% else %}
