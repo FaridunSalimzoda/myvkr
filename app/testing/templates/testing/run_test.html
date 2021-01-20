@@ -1,0 +1,29 @@
+{% extends 'main/base.html' %}
+
+{% block title %}
+{{ test_name }}
+{% endblock %}
+
+
+
+
+{% block content %}
+<div class="co">
+
+
+          {% if quest %}
+            {% if ans %}
+    {% for el in quest %}
+            {% for el in ans %}
+        <ul>
+            <li><input type="radio"></li>
+        </ul>
+
+{%endfor%}
+		{%endfor%}
+
+   {% else %}
+   <p>Вы не добавили ответов</p>
+   {%endif%}
+   {% endblock %}
+</div>
