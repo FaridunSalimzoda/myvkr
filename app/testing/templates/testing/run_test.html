@@ -8,38 +8,31 @@
 
 
 {% block content %}
+
+
+
 <div class="co">
+	{% if quest %}
+	{% for el in quest %}
+		<p>{{ el.number }} {{ el.text }}</p><br>
+    {% if ans %}
+	{% for el in ans %}
 
-
-<div class="co">
-			{% if top %}
-			{% for el in top %}
-
-
-
-	<table class="tftable">
-		<tr>
-			<th class="table_na">Название вопроса</th>
-			<th>Номер вопроса</th>
-			<th>Балл за вопрос</th>
-			<th>Ссылка</th>
-		</tr>
-		<tr>
-			<td class="p-2 text-dark">{{ el.text }}</td>
-			<td class="p-2 text-dark">{{ el.number }}</td>
-			<td class="p-2 text-dark">{{ el.ball }}</td>
-			<td class="p-2 text-dark"><a href="{% url 'qust_detele' pk el.id %} ">Перейти</a></td>
-		</tr>
-	</table>
-		{%endfor%}
-
+       <ul>
+            <li><input type="radio"> {{ el.text_answer }}</li>
+        </ul>
+	{% endfor %}
 	{% else %}
 	<p>Вы не добавили вопрос</p>
 	{%endif%}
-	{% endblock %}
-        <ul>
-            <li><input type="radio"></li>
-        </ul>
+
+
+	{% endfor %}
+	{% else %}
+	<p>Вы не добавили вопрос</p>
+	{%endif%}
+
 
 
 </div>
+{% endblock %}

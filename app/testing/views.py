@@ -41,8 +41,8 @@ def answer_detele(request, pk, kk, tt):
     ans =  list(AnswerTable.objects.filter(id=tt).values())
     return render(request, 'testing/answer_detele.html', {'ans': ans, 'pk': pk, 'kk': kk, 'tt': tt})
 
-def test_users(request, kk, pk):
-    quest = list(QuestionsTable.objects.filter(id=pk).values())
+def test_users(request, pk, kk):
+    quest = QuestionsTable.objects.filter(id_test=pk).values()
     ans = AnswerTable.objects.filter(id_question=kk)
     return render(request, 'testing/run_test.html', {'quest': quest, 'ans': ans, 'pk': pk, 'kk': kk})
 
