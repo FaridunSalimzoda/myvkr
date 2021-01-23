@@ -16,7 +16,7 @@ urlpatterns = [
     path('<int:pk>/<int:kk>/<int:tt>/', views.answer_detele, name='answer_detele'),
     path('<int:pk>/<int:kk>/<int:tt>/answer_delete', views.AnswerDeleteView.as_view(), name='answer_delete'),
     path('<int:pk>/<int:kk>/<int:tt>/answer_update', views.AnswerUpdateView.as_view(), name='answer_update'),
-    path('test_user/<int:pk>/<int:kk>', views.test_users, name = 'test_user')
+    path('test_user/<int:pk>', views.test_users, name = 'test_user')
 
 
 

@@ -41,10 +41,14 @@ def answer_detele(request, pk, kk, tt):
     ans =  list(AnswerTable.objects.filter(id=tt).values())
     return render(request, 'testing/answer_detele.html', {'ans': ans, 'pk': pk, 'kk': kk, 'tt': tt})
 
-def test_users(request, pk, kk):
-    quest = QuestionsTable.objects.filter(id_test=pk).values()
-    ans = AnswerTable.objects.filter(id_question=kk)
-    return render(request, 'testing/run_test.html', {'quest': quest, 'ans': ans, 'pk': pk, 'kk': kk})
+def test_users(request, pk):
+    quest = QuestionsTable.objects.filter(id_test=pk)
+    ans = []
+
+    for i, item in enumerate(quest.values()):
+        ans.append(AnswerTable.objects.filter(id_question=item['id']))
+
+    return render(request, 'testing/run_test.html', {'quest': quest, 'ans': ans, 'pk': pk})
 
 class AnswerUpdateView(UpdateView):
     model = AnswerTable
