@@ -64,17 +64,8 @@ class AnswerForm(ModelForm):
 class UserTestForm(ModelForm):
     class Meta:
         model = ResultsTable
-        fields = ['id_test', 'id_user', 'id_exam', 'estimation', 'timer']
+        fields = ['estimation', 'timer']
         widgets = {
-            'id_test': Select(attrs={
-                'class': 'form_class',
-                'placeholder': 'Название теста'}),
-            'id_user': Select(attrs={
-                'class': 'form_class',
-                'placeholder': 'Название теста'}),
-            'id_exam': Select(attrs={
-                'class': 'form_class',
-                'placeholder': 'Название теста'}),
             'estimation': TextInput(attrs={
                 'id': 'message',
                 'placeholder': 'Добавьте ответ'}),
