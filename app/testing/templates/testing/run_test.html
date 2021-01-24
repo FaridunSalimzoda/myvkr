@@ -10,10 +10,10 @@
 {% block content %}
 
 
-<div class="co">
-<form method="post">
+<form class="form" method="post">
 	{% csrf_token %}
 	{% if quest %}
+	<div class="quest">
 	{% for el in quest %}
 		<p> Вопрос номер {{ el.number }}: {{ el.text }}</p>
     {% if ans %}
@@ -26,6 +26,7 @@
 				{% endif %}
 		{% endfor %}
 	{% endfor %}
+
 	{% else %}
 	<p>Вы не добавили вопрос</p>
 	{%endif%}
@@ -34,9 +35,8 @@
 	{% endfor %}
 	{% else %}
 	<p>Вы не добавили вопрос</p>
-	{%endif%}
-<button type="submit" class="btn btn-success">Отправить тест</button>
-
+	{%endif%}	</div>
+<button type="submit" class="btn  btn-success">Отправить тест</button>
 </form>
-</div>
+
 {% endblock %}
