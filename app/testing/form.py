@@ -1,4 +1,4 @@
-from .models import QuestionsTable, AnswerTable, TestTable
+from .models import QuestionsTable, AnswerTable, TestTable, ResultsTable
 from django.forms import ModelForm, TextInput, Textarea, Select, TimeInput, IntegerField, CheckboxInput
 
 class TestForm(ModelForm):
@@ -61,4 +61,22 @@ class AnswerForm(ModelForm):
                 'placeholder': 'Название теста'}),
         }
 
-
+class UserTestForm(ModelForm):
+    class Meta:
+        model = ResultsTable
+        fields = ['id_test', 'id_user', 'id_exam', 'estimation', 'timer']
+        widgets = {
+            'id_test': Select(attrs={
+                'class': 'form_class',
+                'placeholder': 'Название теста'}),
+            'id_user': Select(attrs={
+                'class': 'form_class',
+                'placeholder': 'Название теста'}),
+            'id_exam': Select(attrs={
+                'class': 'form_class',
+                'placeholder': 'Название теста'}),
+            'estimation': TextInput(attrs={
+                'id': 'message',
+                'placeholder': 'Добавьте ответ'}),
+            'timer': TimeInput,
+        }

@@ -11,15 +11,17 @@
 
 
 <div class="co">
+<form method="post">
+	{% csrf_token %}
 	{% if quest %}
 	{% for el in quest %}
-		<p> Вопрос номер {{ el.number }}: {{ el.text }}</p><br>
+		<p> Вопрос номер {{ el.number }}: {{ el.text }}</p>
     {% if ans %}
 	{% for answers in ans %}
 			{% for answer in answers %}
 				{% if answer.id_question == el %}
        <ul>
-            <li><input type="radio"> {{ answer.text_answer }}</li>
+            <li><input type="radio" name="{{ el.number }}"> {{ answer.text_answer }}</li>
         </ul>
 				{% endif %}
 		{% endfor %}
@@ -33,8 +35,8 @@
 	{% else %}
 	<p>Вы не добавили вопрос</p>
 	{%endif%}
+<button type="submit" class="btn btn-success">Отправить тест</button>
 
-
-
+</form>
 </div>
 {% endblock %}
