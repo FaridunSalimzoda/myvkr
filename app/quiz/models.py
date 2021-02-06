@@ -36,8 +36,8 @@ class Category(models.Model):
     objects = CategoryManager()
 
     class Meta:
-        verbose_name = _("Category")
-        verbose_name_plural = _("Categories")
+        verbose_name = _("Категория")
+        verbose_name_plural = _("Категории")
 
     def __str__(self):
         return self.category
@@ -130,8 +130,8 @@ class Quiz(models.Model):
         super(Quiz, self).save(force_insert, force_update, *args, **kwargs)
 
     class Meta:
-        verbose_name = _("Quiz")
-        verbose_name_plural = _("Quizzes")
+        verbose_name = _("Тест")
+        verbose_name_plural = _("Тесты")
 
     def __str__(self):
         return self.title
@@ -182,8 +182,8 @@ class Progress(models.Model):
     objects = ProgressManager()
 
     class Meta:
-        verbose_name = _("User Progress")
-        verbose_name_plural = _("User progress records")
+        verbose_name = _("Результат")
+        verbose_name_plural = _("Результаты")
 
     @property
     def list_all_cat_scores(self):
@@ -546,8 +546,8 @@ class Question(models.Model):
     objects = InheritanceManager()
 
     class Meta:
-        verbose_name = _("Question")
-        verbose_name_plural = _("Questions")
+        verbose_name = _("Вопрос")
+        verbose_name_plural = _("Вопросы")
         ordering = ['category']
 
     def __str__(self):

@@ -44,8 +44,8 @@ class MCQQuestion(Question):
         return Answer.objects.get(id=guess).content
 
     class Meta:
-        verbose_name = "Multiple Choice Question"
-        verbose_name_plural = "Multiple Choice Questions"
+        verbose_name = "Вопрос С множественным Выбором"
+        verbose_name_plural = "Вопросы С множественным Выбором"
 
 
 class Answer(models.Model):
@@ -67,8 +67,8 @@ class Answer(models.Model):
 
 
     class Meta:
-        verbose_name = "Answer"
-        verbose_name_plural = "Answers"
+        verbose_name = "Ответ"
+        verbose_name_plural = "Ответы"
 
 
 
