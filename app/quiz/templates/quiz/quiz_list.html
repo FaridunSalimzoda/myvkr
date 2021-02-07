@@ -1,10 +1,17 @@
-{% extends 'base.html' %}
+{% extends 'main/base.html' %}
 {% load i18n %}
 {% load quiz_tags %}
-{% block title %}{% trans "All Quizzes" %}{% endblock %}
+{% block title %}{% trans "Тест" %}{% endblock %}
 
 {% block content %}
-<h2>{% trans "List of quizzes" %}</h2>
+<div class="menu_gl">
+	<ul class="menu">
+		<li><a class="cours_menu_a" href="#">Все тесты</a></li>
+		<li><a href="#">Мои тесты</a></li>
+		<li><a href="{% url 'add_test' %}">Добавить тест</a></li>
+			</ul>
+</div>
+<h2>{% trans "Тест" %}</h2>
     {% if quiz_list %}
 		<table class="table table-bordered table-striped">
 
@@ -39,6 +46,6 @@
 		</table>
 
 	{% else %}
-        <p>{% trans "There are no available quizzes" %}.</p>
+        <p>{% trans "Нет доступных тестов" %}.</p>
     {% endif %}
 {% endblock %}

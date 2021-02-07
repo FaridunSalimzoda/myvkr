@@ -264,3 +264,8 @@ def logout_user(request):
     print('logout function working')
     return redirect('login')
 
+def add_test (request):
+    dta ={
+        'uu':uu
+    }
+    return render(request, 'add_test.html', dta)
