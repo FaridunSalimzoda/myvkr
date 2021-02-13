@@ -81,8 +81,9 @@ class Quiz(models.Model):
 
     single_attempt = models.BooleanField(
         blank=False, default=False,
-        help_text=_("Пользователю будет разрешена только одна попытка."),
-        verbose_name=_("Одна попытка")),
+        help_text=_("Если включенно, то можно пройти только одну попытку"),
+        verbose_name=_("Одна попытка")
+    )
 
     pass_mark = models.SmallIntegerField(
         blank=True, default=0,
@@ -91,16 +92,18 @@ class Quiz(models.Model):
         validators=[MaxValueValidator(100)])
 
     success_text = models.TextField(
+
         blank=True, help_text=_("При неправельном прохождение теста"),
         verbose_name=_("Отображается, если пользователь"
-                       " проходит тест")),
+                       " проходит тест")
+    )
 
     fail_text = models.TextField(
         verbose_name=_("При неправельном прохождение теста"),
         blank=True,
         help_text=_("Отображается, если пользователь"
-                                "не проходит тест.")),
-
+                    "не проходит тест.")
+    )
     draft = models.BooleanField(
         blank=True, default=False,
         verbose_name=_("Проект"),

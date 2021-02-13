@@ -85,3 +85,4 @@ def adk(request):
         'error': error
     }
     return render(request, 'cours/addKurs.html', data)
+
