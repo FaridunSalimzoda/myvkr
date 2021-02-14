@@ -15,7 +15,7 @@ class QuizForm(ModelForm):
     class Meta:
         model = Quiz
         fields = ['title', 'description', 'category', 'random_order', 'max_questions', 'answers_at_end',
-                  'exam_paper', 'pass_mark','single_attempt', 'fail_text', 'draft', 'success_text']
+                  'exam_paper', 'pass_mark','single_attempt', 'fail_text', 'draft', 'success_text', 'url']
         widgets = {
             'title': TextInput(attrs={
                 'class': 'form_class',
@@ -44,5 +44,6 @@ class QuizForm(ModelForm):
                   'pass_mark': TextInput(attrs={}),
                 'success_text': TextInput(attrs={'class': 'form_class'}),
                 'fail_text': TextInput(attrs={'class': 'form_class'}),
-                'draft': CheckboxInput(attrs={})
+                'draft': CheckboxInput(attrs={}),
+                'url': TextInput(attrs={})
         }

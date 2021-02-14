@@ -53,6 +53,11 @@ class Quiz(models.Model):
         verbose_name=_("Описание"),
         blank=True, help_text=_("a description of the quiz"))
 
+    url = models.SlugField(
+        max_length=60, blank = False,
+        help_text=_("Введите ссылку"),
+        verbose_name=_("Ссылка теста")
+    )
 
 
     category = models.ForeignKey(
