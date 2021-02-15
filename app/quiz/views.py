@@ -6,7 +6,7 @@ from django.shortcuts import get_object_or_404, render
 from django.utils.decorators import method_decorator
 from django.views.generic import DetailView, ListView, TemplateView
 from django.views.generic.edit import FormView
-from .forms import QuestionForm, QuizForm
+from .forms import QuestionForm, QuizForm,QuestionsFormmy
 from .models import Quiz, Category, Progress, Sitting, Question
 from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login, logout
@@ -283,13 +283,13 @@ def add_test (request):
 def add_questions(request):
     error = ''
     if request.method == 'POST':
-        form = QuestionForm(request.POST)
+        form = QuestionsFormmy(request.POST)
         if form.is_valid():
             form.save()
             return redirect('kurs')
         else:
             error = 'error'
-    form = QuizForm()
+    form = QuestionsFormmy()
     data = {
         'form': form,
         'error': error

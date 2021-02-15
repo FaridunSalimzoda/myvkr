@@ -49,7 +49,7 @@ class QuizForm(ModelForm):
                 'url': TextInput(attrs={})
         }
 
-class  QuestionsForm(ModelForm):
+class  QuestionsFormmy(ModelForm):
     class Meta:
         model = Question
         fields = ['quiz', 'category', 'figure', 'content', 'explanation']
@@ -57,11 +57,20 @@ class  QuestionsForm(ModelForm):
             'quiz': TextInput(attrs={
                 'class': 'form_class'
             }),
+
             'category': Select(attrs={
-                'class': 'form_class'
+                'class': 'form_class',
+                'placeholder': 'Категория'
             }),
+
             'figure': ImageField,
+
             'content': TextInput(attrs={
                 'class': 'form_class'
             }),
+
+            'explanation': TextInput(attrs={
+                'class': 'form_class',
+
+            })
         }
