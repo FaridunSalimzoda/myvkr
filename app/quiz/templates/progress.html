@@ -8,7 +8,20 @@
 {% block description %} {% trans "User Progress Page" %} {% endblock %}
 
 {% block content %}
+<div class="menu_gl">
+	<ul class="menu">
+	   <ul class="navbar-nav rm-auto">
+        {% if user.is_authenticated %}
+        <li class="nav-tem" style="color:gray">
+          <a href="{% url 'quiz_index' %}" class="nav-link">Тесты</a>
+        </li>
+        <li class="nav-tem" style="color:gray">
+            <a href="{% url 'quiz_progress' %}" class="nav-link">Прогресс</a>
+          </li>
+        {% endif %}
 
+      </ul>
+</div>
   {% if cat_scores %}
 
   <h1>{% trans "Question Category Scores" %}</h1>

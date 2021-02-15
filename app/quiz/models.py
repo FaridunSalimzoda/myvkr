@@ -641,4 +641,3 @@ def csv_upload_post_save(sender, instance, created, *args, **kwargs):
 
 post_save.connect(csv_upload_post_save, sender=CSVUpload)
 
-

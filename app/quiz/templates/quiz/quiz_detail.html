@@ -5,6 +5,23 @@
 {% endblock %}
 
 {% block content %}
+<div class="menu_gl">
+	<ul class="menu">
+	   <ul class="navbar-nav rm-auto">
+        {% if user.is_authenticated %}
+        <li class="nav-tem" style="color:gray">
+          <a href="{% url 'quiz_index' %}" class="nav-link">Тесты</a>
+        </li>
+        <li class="nav-tem" style="color:gray">
+            <a href="{% url 'quiz_progress' %}" class="nav-link">Прогресс</a>
+          </li>
+        <li class="nav-tem" style="color:gray">
+            <a href="{% url 'add_answer' %}" class="nav-link">Добавить ответ</a>
+          </li>
+        {% endif %}
+
+      </ul>
+</div>
 <h2>{{ quiz.title }}</h2>
 <h3>{% trans "Category" %}: {{ quiz.category }}</h3>
 {% if quiz.single_attempt %}

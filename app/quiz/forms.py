@@ -1,7 +1,8 @@
 from django import forms
 from django.forms.widgets import RadioSelect
-from django.forms import ModelForm, TextInput, Textarea, Select, CharField, CheckboxInput
+from django.forms import ModelForm, TextInput, Textarea, Select, CharField, CheckboxInput, ImageField
 from  .models import Quiz
+from quiz.models import Question
 
 
 class QuestionForm(forms.Form):
@@ -46,4 +47,21 @@ class QuizForm(ModelForm):
                 'fail_text': TextInput(attrs={'class': 'form_class'}),
                 'draft': CheckboxInput(attrs={}),
                 'url': TextInput(attrs={})
+        }
+
+class  QuestionsForm(ModelForm):
+    class Meta:
+        model = Question
+        fields = ['quiz', 'category', 'figure', 'content', 'explanation']
+        widgets = {
+            'quiz': TextInput(attrs={
+                'class': 'form_class'
+            }),
+            'category': Select(attrs={
+                'class': 'form_class'
+            }),
+            'figure': ImageField,
+            'content': TextInput(attrs={
+                'class': 'form_class'
+            }),
         }

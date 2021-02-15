@@ -279,3 +279,19 @@ def add_test (request):
         'error': error
     }
     return render(request, 'quiz/add_test.html', data)
+
+def add_questions(request):
+    error = ''
+    if request.method == 'POST':
+        form = QuestionForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('kurs')
+        else:
+            error = 'error'
+    form = QuizForm()
+    data = {
+        'form': form,
+        'error': error
+    }
+    return render(request, 'quiz/add_questions.html', data)

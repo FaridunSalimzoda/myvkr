@@ -13,10 +13,8 @@ class MCQQuestion(Question):
     answer_order = models.CharField(
         max_length=30, null=True, blank=True,
         choices=ANSWER_ORDER_OPTIONS,
-        help_text="The order in which multichoice \
-                    answer options are displayed \
-                    to the user",
-        verbose_name="Answer Order")
+        help_text="Порядок, в котором множественном варианты ответа отображаются для пользователя",
+        verbose_name="Порядок ответа")
 
     def check_if_correct(self, guess):
         answer = Answer.objects.get(id=guess)
