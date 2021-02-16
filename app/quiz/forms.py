@@ -3,6 +3,7 @@ from django.forms.widgets import RadioSelect
 from django.forms import ModelForm, TextInput, Textarea, Select, CharField, CheckboxInput, ImageField
 from  .models import Quiz
 from quiz.models import Question
+from model_utils.managers import InheritanceManager
 
 
 class QuestionForm(forms.Form):
@@ -52,7 +53,7 @@ class QuizForm(ModelForm):
 class  QuestionsFormmy(ModelForm):
     class Meta:
         model = Question
-        fields = ['quiz', 'category', 'figure', 'content', 'explanation']
+        fields = ['quiz', 'category', 'figure', 'content', 'explanation', 'objects']
         widgets = {
             'quiz': TextInput(attrs={
                 'class': 'form_class'
@@ -63,7 +64,6 @@ class  QuestionsFormmy(ModelForm):
                 'placeholder': 'Категория'
             }),
 
-            'figure': ImageField,
 
             'content': TextInput(attrs={
                 'class': 'form_class'
@@ -72,5 +72,6 @@ class  QuestionsFormmy(ModelForm):
             'explanation': TextInput(attrs={
                 'class': 'form_class',
 
-            })
+            }),
+            'objects':InheritanceManager(attrs={})
         }
