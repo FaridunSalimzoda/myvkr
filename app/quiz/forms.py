@@ -53,11 +53,12 @@ class QuizForm(ModelForm):
 class  QuestionsFormmy(ModelForm):
     class Meta:
         model = Question
-        fields = ['quiz', 'category', 'figure', 'content', 'explanation', 'objects']
+        fields = ['category', 'figure', 'content', 'explanation']
         widgets = {
-            'quiz': TextInput(attrs={
-                'class': 'form_class'
-            }),
+            # здесь может быть поле для выбора теста, в который должен попавсть вопрос
+            # 'quiz': TextInput(attrs={
+            #     'class': 'form_class'
+            # }),
 
             'category': Select(attrs={
                 'class': 'form_class',
@@ -72,6 +73,5 @@ class  QuestionsFormmy(ModelForm):
             'explanation': TextInput(attrs={
                 'class': 'form_class',
 
-            }),
-            'objects':InheritanceManager(attrs={})
+            })
         }

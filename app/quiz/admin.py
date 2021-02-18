@@ -2,10 +2,13 @@ from django.contrib import admin
 from django import forms
 from django.contrib.admin.widgets import FilteredSelectMultiple
 # Register your models here.
-from .models import Quiz, course, Question, Progress
+from .models import Quiz, Question, Progress
 from mcq.models import MCQQuestion, Answer
 from django.utils.translation import ugettext_lazy as _
 from .models import CSVUpload
+
+# вот так сюда можно подключить курсы, но пока это не используется
+from cours.models import CoueseTable
 
 
 class CSVUploadsAdmin(admin.ModelAdmin):
@@ -83,7 +86,6 @@ class ProgressAdmin(admin.ModelAdmin):
 
 
 admin.site.register(Quiz, QuizAdmin)
-admin.site.register(Category, CategoryAdmin)
 admin.site.register(MCQQuestion, MCQuestionAdmin)
 admin.site.register(Progress, ProgressAdmin)
 admin.site.register(CSVUpload, CSVUploadsAdmin)
