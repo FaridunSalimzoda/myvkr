@@ -15,7 +15,7 @@ from .validators import csv_file_validator
 from django.contrib.auth.models import User
 from django.contrib import messages
 
-
+from cours.models import CoueseTable
 class CategoryManager(models.Manager):
 
     def new_category(self, category):
@@ -61,8 +61,8 @@ class Quiz(models.Model):
 
 
     category = models.ForeignKey(
-        Category, null=True, blank=True,
-        verbose_name=_("Категория"), on_delete=models.CASCADE)
+        CoueseTable, null=True, blank=True,
+        verbose_name=_("Курс"), on_delete=models.CASCADE)
 
     random_order = models.BooleanField(
         blank=False, default=False,
@@ -520,10 +520,11 @@ class Question(models.Model):
 
     quiz = models.ManyToManyField(Quiz,
                                   verbose_name=_("Quiz"),
-                                  blank=True)
+                                  blank=True,
+                                  null = True)
 
-    category = models.ForeignKey(Category,
-                                 verbose_name=_("Category"),
+    category = models.ForeignKey(CoueseTable,
+                                 verbose_name=_("Курс"),
                                  blank=True,
                                  null=True, on_delete=models.CASCADE)
 

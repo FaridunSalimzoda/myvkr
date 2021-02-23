@@ -286,7 +286,7 @@ def add_questions(request):
         form = QuestionsFormmy(request.POST)
         if form.is_valid():
             form.save()
-            return redirect('kurs')
+            return redirect('index')
         else:
             error = 'error'
     form = QuestionsFormmy()

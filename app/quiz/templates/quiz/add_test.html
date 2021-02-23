@@ -17,7 +17,7 @@
 	{% csrf_token %}
   <p> Название теста : {{ form.title  }}<br> </p>
   <p>Описание теста: {{ form.description }}<br> </p>
-  <p>Категория теста: {{ form.category  }}<br> </p>
+  <p>Курс: {{ form.category  }}<br> </p>
   <p>Ввыодить вопросы разноброс: {{ form.random_order }}<br> </p>
   <p>Максимально вопросов: {{ form.max_questions }}<br> </p>
   <p>Выводить ответы в конце: {{ form.answers_at_end }} </p> <br>

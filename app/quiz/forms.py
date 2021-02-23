@@ -62,7 +62,7 @@ class  QuestionsFormmy(ModelForm):
 
             'category': Select(attrs={
                 'class': 'form_class',
-                'placeholder': 'Категория'
+                'placeholder': 'Курс'
             }),
 
 
