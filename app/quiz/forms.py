@@ -3,6 +3,7 @@ from django.forms.widgets import RadioSelect
 from django.forms import ModelForm, TextInput, Textarea, Select, CharField, CheckboxInput, ImageField
 from  .models import Quiz
 from quiz.models import Question
+#from mcq.models import MCQQuestion
 from model_utils.managers import InheritanceManager
 
 
@@ -75,3 +76,18 @@ class  QuestionsFormmy(ModelForm):
 
             })
         }
+
+#class MCQQuestForm(ModelForm):
+   # class Meta:
+     #   model = MCQQuestion
+     #   fields = ['answer_order', 'check_if_correct', 'order_answers', 'get_answers', 'get_answers_list', 'answer_choice_to_string']
+     #   widgets = {
+           # 'answer_order': Select({}),
+           # 'check_if_correct': CheckboxInput({}),
+           # 'order_answers': CheckboxInput({}),
+           # 'get_answes': CheckboxInput({}),
+          #  'get_answers_list': CheckboxInput({}),
+         #   'answer_choice_to_string': CheckboxInput({})
+
+
+        #}

@@ -290,8 +290,10 @@ def add_questions(request):
         else:
             error = 'error'
     form = QuestionsFormmy()
+   # form1 = MCQQuestForm()
     data = {
         'form': form,
+       # 'form1': form1,
         'error': error
     }
     return render(request, 'quiz/add_questions.html', data)
