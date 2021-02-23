@@ -6,7 +6,7 @@ from django.shortcuts import get_object_or_404, render
 from django.utils.decorators import method_decorator
 from django.views.generic import DetailView, ListView, TemplateView
 from django.views.generic.edit import FormView
-from .forms import QuestionForm, QuizForm,QuestionsFormmy
+from .forms import QuestionForm, QuizForm,QuestionsFormmy, MCQQuestForm
 from .models import Quiz, Category, Progress, Sitting, Question
 from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login, logout
@@ -290,10 +290,10 @@ def add_questions(request):
         else:
             error = 'error'
     form = QuestionsFormmy()
-   # form1 = MCQQuestForm()
+    form1 = MCQQuestForm()
     data = {
         'form': form,
-       # 'form1': form1,
+        'form1': form1,
         'error': error
     }
     return render(request, 'quiz/add_questions.html', data)
