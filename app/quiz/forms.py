@@ -53,8 +53,8 @@ class QuizForm(ModelForm):
 
 class  QuestionsFormmy(ModelForm):
     class Meta:
-        model = Question
-        fields = ['category', 'figure', 'content', 'explanation']
+        model = MCQQuestion
+        fields = ['category', 'content', 'explanation']
         widgets = {
             # здесь может быть поле для выбора теста, в который должен попавсть вопрос
             # 'quiz': TextInput(attrs={
@@ -74,20 +74,21 @@ class  QuestionsFormmy(ModelForm):
             'explanation': TextInput(attrs={
                 'class': 'form_class',
 
-            })
-        }
-
-class MCQQuestForm(ModelForm):
-    class Meta:
-        model = MCQQuestion
-        fields = ['answer_order', 'check_if_correct', 'order_answers', 'get_answers', 'get_answers_list', 'answer_choice_to_string']
-        widgets = {
-            'answer_order': Select({}),
-            'check_if_correct': CheckboxInput({}),
-            'order_answers': CheckboxInput({}),
-            'get_answes': CheckboxInput({}),
-            'get_answers_list': CheckboxInput({}),
-            'answer_choice_to_string': CheckboxInput({})
-
+            }),
 
         }
+#
+# class MCQQuestForm(ModelForm):
+#     class Meta:
+#         model =
+#         fields = ['answer_order', 'check_if_correct', 'order_answers', 'get_answers', 'get_answers_list', 'answer_choice_to_string']
+#         widgets = {
+#             'answer_order': Select({}),
+#             'check_if_correct': CheckboxInput({}),
+#             'order_answers': CheckboxInput({}),
+#             'get_answes': CheckboxInput({}),
+#             'get_answers_list': CheckboxInput({}),
+#             'answer_choice_to_string': CheckboxInput({})
+#
+#
+#         }

@@ -16,7 +16,6 @@
 <form method="post">
     {% csrf_token %}
    <p> Курс: {{ form.category }}<br></p>
-  <p> Файл: {{ form.figure }}<br></p>
   <p> Вопрос: {{ form.content }}<br></p>
   <p>Объяснение:  {{ form.explanation }}<br></p>
   <p>{{ form.objects }}</p>
