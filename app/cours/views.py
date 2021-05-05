@@ -4,6 +4,7 @@ from .form import CourseTableForm, topicform
 from django.views.generic import DetailView, UpdateView, DeleteView
 
 
+
 def cour(request):
     ku = CoueseTable.objects.order_by('id')
     return render(request, 'cours/cours_home.html', {'ku': ku})
