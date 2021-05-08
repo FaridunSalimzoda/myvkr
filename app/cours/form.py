@@ -1,11 +1,11 @@
-from .models import CoueseTable,TopicTable
+from .models import CourseTable,TopicTable
 from django.forms import ModelForm, TextInput, Textarea, Select
 
 
 class CourseTableForm(ModelForm):
     class Meta:
-        model = CoueseTable
-        fields = ['title', 'task', 'teache']
+        model = CourseTable
+        fields = ['title', 'task', 'User']
 
         widgets = {
             'title': TextInput(attrs={
@@ -16,7 +16,7 @@ class CourseTableForm(ModelForm):
                 'class': '',
                 'placeholder': 'Описание курса'
             }),
-            'teache': TextInput(attrs={
+            'User': Select(attrs={
                 'class': '',
                 'placeholder': 'Преподаватель'
             })

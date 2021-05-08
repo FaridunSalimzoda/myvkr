@@ -47,18 +47,18 @@ class MCQQuestion(Question):
 
 
 class Answer(models.Model):
-    question = models.ForeignKey(MCQQuestion, verbose_name='Question', on_delete=models.CASCADE)
+    question = models.ForeignKey(MCQQuestion, verbose_name='Вопросы', on_delete=models.CASCADE)
 
     content = models.CharField(max_length=1000,
                                blank=False,
-                               help_text="Enter the answer text that \
-                                            you want displayed",
-                               verbose_name="Content")
+                               help_text="Введите текст ответа, который \
+                                            вы хотите показать",
+                               verbose_name="Содержание")
 
     correct = models.BooleanField(blank=False,
                                   default=False,
-                                  help_text="Is this a correct answer?",
-                                  verbose_name="Correct")
+                                  help_text="Это правильный ответ?",
+                                  verbose_name="Правильный")
 
     def __str__(self):
         return self.content

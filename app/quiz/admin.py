@@ -8,7 +8,7 @@ from django.utils.translation import ugettext_lazy as _
 from .models import CSVUpload
 
 # вот так сюда можно подключить курсы, но пока это не используется
-from cours.models import CoueseTable
+from cours.models import CourseTable
 
 
 class CSVUploadsAdmin(admin.ModelAdmin):

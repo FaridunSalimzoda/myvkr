@@ -9,6 +9,7 @@ from django.urls import path
 
 urlpatterns = [           path('adt', views.add_test, name='add_test'),
                           path('add', views.add_questions, name='add_answer'),
+                          path('registr', views.add_user, name='add_user'),
                         url(regex=r'^$', view=index, name='index'),
                         url(regex=r'^login/$', view=login_user, name='login'),
                         url(regex=r'^logout/$', view=logout_user, name='logout'),

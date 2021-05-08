@@ -2,11 +2,11 @@ from django.db import models
 from django.contrib.auth.models import User
 
 
-class CoueseTable(models.Model):
+class CourseTable(models.Model):
     title = models.CharField('Название курса', max_length=75)
     task = models.TextField('Описание курса', max_length=250)
-    teache = models.CharField('Преподаватель', max_length=50)
-    users = models.ManyToManyField(User)
+    User = models.CharField('Преподаватель', max_length=50)
+
 
     def get_users(self):
         return "\n".join([u.username for u in self.users.all()])
@@ -26,8 +26,7 @@ class CoueseTable(models.Model):
 class TopicTable(models.Model):
     title = models.CharField('Название темы', max_length=75)
     task = models.TextField('Описание темы', max_length=250)
-   # kursu_ptr = models.ForeignKey(kursu, on_delete=models.CASCADE)
-    id_course = models.ForeignKey(CoueseTable, on_delete=models.CASCADE)
+    id_course = models.ForeignKey(CourseTable, on_delete=models.CASCADE)
     def __str__(self):
         return f'Тема {self.title} курса {self.id_course}'
 

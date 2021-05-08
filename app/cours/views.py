@@ -1,26 +1,26 @@
 from django.shortcuts import render, redirect
-from .models import CoueseTable, TopicTable
+from .models import CourseTable, TopicTable
 from .form import CourseTableForm, topicform
 from django.views.generic import DetailView, UpdateView, DeleteView
 
 
 
 def cour(request):
-    ku = CoueseTable.objects.order_by('id')
+    ku = CourseTable.objects.order_by('id')
     return render(request, 'cours/cours_home.html', {'ku': ku})
 
 def user_cours(request):
-    ku = CoueseTable.objects.order_by('id')
+    ku = CourseTable.objects.order_by('id')
     return render(request, 'cours/user_cours.html', {'ku': ku})
 
 def detail(request, pk):
-    ku = list(CoueseTable.objects.filter(id=pk).values())
+    ku = list(CourseTable.objects.filter(id=pk).values())
     top = TopicTable.objects.filter(id_course=pk)
     return render(request, 'cours/datail.html', {'post': ku[0], 'top': top, 'pk': pk})
 
 def topic_dateil(request, pk, kk):
     top = TopicTable.objects.filter(id_course=pk)
-    ku = list(CoueseTable.objects.filter(id=pk).values())
+    ku = list(CourseTable.objects.filter(id=pk).values())
     return render(request, 'cours/topic.html', {'top': top[0], 'pk': pk, 'kk': kk})
 # class kursDetailView(DetailView):
 #    model = kursu
@@ -29,7 +29,7 @@ def topic_dateil(request, pk, kk):
 
 
 class kursUpdateView(UpdateView):
-    model = CoueseTable
+    model = CourseTable
     template_name = 'cours/update.html'
 
     form_class = CourseTableForm
@@ -41,7 +41,7 @@ class topicUpdateView(UpdateView):
     form_class = topicform
 
 class kursDeleteView(DeleteView):
-    model = CoueseTable
+    model = CourseTable
     success_url = '/course/'
     template_name = 'cours/cours_delete.html'
 
