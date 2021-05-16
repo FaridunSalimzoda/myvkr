@@ -302,8 +302,8 @@ class SittingManager(models.Manager):
         question_set = [item.id for item in question_set]
 
         if len(question_set) == 0:
-            raise ImproperlyConfigured('Question set of the quiz is empty. '
-                                       'Please configure questions properly')
+            raise ImproperlyConfigured('Набор вопросов викторины пуст. '
+                                        'Пожалуйста, добавьте вопросы')
 
         if quiz.max_questions and quiz.max_questions < len(question_set):
             question_set = question_set[:quiz.max_questions]
@@ -520,7 +520,7 @@ class Question(models.Model):
     """
 
     quiz = models.ManyToManyField(Quiz,
-                                  verbose_name=_("Quiz"),
+                                  verbose_name=_("Вопрос"),
                                   blank=True,
                                   null = True)
 
@@ -532,20 +532,21 @@ class Question(models.Model):
     figure = models.ImageField(upload_to='uploads/%Y/%m/%d',
                                blank=True,
                                null=True,
-                               verbose_name=_("Figure"))
+                               verbose_name=_("Файл"))
 
     content = models.CharField(max_length=1000,
                                blank=False,
-                               help_text=_("Enter the question text that "
-                                           "you want displayed"),
-                               verbose_name=_('Question'))
+                               help_text=_("Введите текст вопроса, который "
+                                           "вы хотите показать"),
+                               verbose_name=_('Вопрос'))
 
     explanation = models.TextField(max_length=2000,
                                    blank=True,
-                                   help_text=_("Explanation to be shown "
-                                               "after the question has "
-                                               "been answered."),
-                                   verbose_name=_('Explanation'))
+                                   help_text=_("Объяснение должно быть показано "
+                                               "после того, как "
+                                               "был дан ответ на вопрос."),
+
+                                   verbose_name=_('Объяснение'))
 
     objects = InheritanceManager()
 

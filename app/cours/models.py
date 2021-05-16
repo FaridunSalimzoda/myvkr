@@ -1,11 +1,11 @@
 from django.db import models
-from django.contrib.auth.models import User
-
+from django.contrib.auth import get_user_model
+user = get_user_model()
 
 class CourseTable(models.Model):
     title = models.CharField('Название курса', max_length=75)
     task = models.TextField('Описание курса', max_length=250)
-    User = models.CharField('Преподаватель', max_length=50)
+    teacher = models.ForeignKey(user, on_delete=models.CASCADE)
 
 
     def get_users(self):

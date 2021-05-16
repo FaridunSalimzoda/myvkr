@@ -36,7 +36,7 @@ class QuizAdminForm(forms.ModelForm):
         required=False,
         label=_("Questions"),
         widget=FilteredSelectMultiple(
-            verbose_name=_("Questions"),
+            verbose_name=_("Вопросы"),
             is_stacked=False))
 
     def __init__(self, *args, **kwargs):
