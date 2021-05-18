@@ -22,10 +22,11 @@ def topic_dateil(request, pk, kk):
     top = TopicTable.objects.filter(id_course=pk)
     ku = list(CourseTable.objects.filter(id=pk).values())
     return render(request, 'cours/topic.html', {'top': top[0], 'pk': pk, 'kk': kk})
-# class kursDetailView(DetailView):
-#    model = kursu
-#     template_name = 'cours/datail.html'
-#     context_object_name = 'post'
+
+def my_cours(request):
+    ku = CourseTable.objects.order_by('teacher')
+    return render(request, 'cours/mykurs.html', {'ku': ku})
+
 
 
 class kursUpdateView(UpdateView):

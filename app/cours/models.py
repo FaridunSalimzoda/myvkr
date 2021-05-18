@@ -1,11 +1,11 @@
 from django.db import models
 from django.contrib.auth import get_user_model
-user = get_user_model()
+User_table = get_user_model()
 
 class CourseTable(models.Model):
     title = models.CharField('Название курса', max_length=75)
     task = models.TextField('Описание курса', max_length=250)
-    teacher = models.ForeignKey(user, on_delete=models.CASCADE)
+    teacher = models.ForeignKey(User_table, on_delete=models.CASCADE)
 
 
     def get_users(self):
@@ -37,3 +37,7 @@ class TopicTable(models.Model):
 
         verbose_name = 'Тему'
         verbose_name_plural = 'Темы'
+
+class AssignedCoursesTable (models.Model):
+    id_course = models.ForeignKey(CourseTable, on_delete=models.CASCADE)
+    # id_user = models.ForeingKe(, on_delete=models.CASCADE)

@@ -5,6 +5,7 @@ urlpatterns = [
         path('', views.cour, name='kurs'),
         path('user_course', views.user_cours, name = 'user_course'),
         path('adk', views.adk, name='adk'),
+        path('mycours', views.my_cours, name='mycours'),
         path('<int:pk>/', views.detail, name='datail'),
         path('<int:pk>/new_topic', views.newtopic, name='newtopic'),
         path('<int:pk>/update', views.kursUpdateView.as_view(), name='update'),

@@ -2,8 +2,8 @@ from django.contrib import admin
 from .models import CourseTable, TopicTable
 
 class adminCoursTable(admin.ModelAdmin):
-    list_display = ('id', 'title', 'task', 'User', 'get_users')
-    list_filter =('title', 'task', 'User')
+    list_display = ('id', 'title', 'task', 'teacher')
+    list_filter =('title', 'task', 'teacher')
 
 class adminTopicTable(admin.ModelAdmin):
     list_display = ('id', 'title', 'task', 'id_course')

@@ -5,7 +5,7 @@ from django.forms import ModelForm, TextInput, Textarea, Select
 class CourseTableForm(ModelForm):
     class Meta:
         model = CourseTable
-        fields = ['title', 'task', 'User']
+        fields = ['title', 'task', 'teacher']
 
         widgets = {
             'title': TextInput(attrs={
@@ -16,10 +16,10 @@ class CourseTableForm(ModelForm):
                 'class': '',
                 'placeholder': 'Описание курса'
             }),
-            'User': Select(attrs={
-                'class': '',
-                'placeholder': 'Преподаватель'
-            })
+            'teacher': Select(attrs={
+               'class': '',
+               'placeholder': 'Преподаватель'
+           })
         }
 
 
