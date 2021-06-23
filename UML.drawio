@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2021-06-23T20:48:36.651Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.212 YaBrowser/21.5.3.742 Yowser/2.5 Safari/537.36" etag="NePe9VaWup28I288EEfu" version="14.8.0" type="github" pages="13">
+<mxfile host="app.diagrams.net" modified="2021-06-23T20:48:50.023Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.212 YaBrowser/21.5.3.742 Yowser/2.5 Safari/537.36" etag="Q2qd4lOPPm3pDEHH8_ul" version="14.8.0" type="github" pages="13">
   <diagram id="GKcgzPVIfDXzs5H8IYNc" name="Use case">
     <mxGraphModel dx="862" dy="477" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -1640,9 +1640,6 @@
         </mxCell>
         <mxCell id="V6UmSnZKiZP5b17r9Llb-7" value="Успешно?" style="rhombus;whiteSpace=wrap;html=1;fillColor=#ffffc0;strokeColor=#ff0000;" vertex="1" parent="P4Gl1ud89ZzL4BYZdzdj-1">
           <mxGeometry x="352.5" y="170" width="105" height="60" as="geometry" />
-        </mxCell>
-        <mxCell id="V6UmSnZKiZP5b17r9Llb-8" value="&lt;font style=&quot;font-size: 16px&quot;&gt;Диаграмма деятельности Преподавателя&lt;br&gt;при работе с курсом&lt;br&gt;&lt;/font&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="P4Gl1ud89ZzL4BYZdzdj-1">
-          <mxGeometry x="50" y="20" width="140" height="90" as="geometry" />
         </mxCell>
         <mxCell id="V6UmSnZKiZP5b17r9Llb-9" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;strokeColor=#FF3333;" edge="1" parent="P4Gl1ud89ZzL4BYZdzdj-1" source="V6UmSnZKiZP5b17r9Llb-10" target="V6UmSnZKiZP5b17r9Llb-20">
           <mxGeometry relative="1" as="geometry" />
