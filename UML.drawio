@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2021-06-24T14:24:17.276Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.212 YaBrowser/21.5.3.742 Yowser/2.5 Safari/537.36" etag="iX0K1JWrX44FPq0-Klb4" version="14.8.0" type="github" pages="14">
+<mxfile host="app.diagrams.net" modified="2021-06-24T16:19:06.961Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.212 YaBrowser/21.5.3.742 Yowser/2.5 Safari/537.36" etag="vQVASCdvjyk5pFT2ERcO" version="14.8.0" type="github" pages="14">
   <diagram id="GKcgzPVIfDXzs5H8IYNc" name="Use case">
     <mxGraphModel dx="862" dy="477" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -2425,10 +2425,10 @@
             <mxPoint x="2" y="-2" as="offset" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="UW6KoU9s_xzxmObj8yLV-38" value="Выборка данных" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.661;entryY=-0.006;entryDx=0;entryDy=0;entryPerimeter=0;startArrow=none;startFill=0;endArrow=classicThin;endFill=1;" edge="1" parent="UW6KoU9s_xzxmObj8yLV-1" target="UW6KoU9s_xzxmObj8yLV-23">
+        <mxCell id="UW6KoU9s_xzxmObj8yLV-38" value="Выборка данных" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;startArrow=none;startFill=0;endArrow=classicThin;endFill=1;exitX=0.722;exitY=1.011;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="UW6KoU9s_xzxmObj8yLV-1" source="UW6KoU9s_xzxmObj8yLV-26">
           <mxGeometry x="0.0396" y="-20" relative="1" as="geometry">
             <mxPoint x="617" y="489" as="sourcePoint" />
-            <mxPoint x="380" y="400" as="targetPoint" />
+            <mxPoint x="521" y="500" as="targetPoint" />
             <mxPoint as="offset" />
           </mxGeometry>
         </mxCell>
