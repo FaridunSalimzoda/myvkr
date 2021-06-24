@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2021-06-24T14:22:31.984Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.212 YaBrowser/21.5.3.742 Yowser/2.5 Safari/537.36" etag="G9yL9t4VHheqF2br2w_Z" version="14.8.0" type="github" pages="14">
+<mxfile host="app.diagrams.net" modified="2021-06-24T14:24:17.276Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.212 YaBrowser/21.5.3.742 Yowser/2.5 Safari/537.36" etag="iX0K1JWrX44FPq0-Klb4" version="14.8.0" type="github" pages="14">
   <diagram id="GKcgzPVIfDXzs5H8IYNc" name="Use case">
     <mxGraphModel dx="862" dy="477" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -2412,17 +2412,17 @@
           </mxGeometry>
         </mxCell>
         <mxCell id="UW6KoU9s_xzxmObj8yLV-36" value="Обмен данными по сети" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0;exitDx=120;exitDy=95;exitPerimeter=0;entryX=0;entryY=0;entryDx=0;entryDy=85;entryPerimeter=0;startArrow=classicThin;startFill=1;endArrow=classicThin;endFill=1;" edge="1" parent="UW6KoU9s_xzxmObj8yLV-1" source="UW6KoU9s_xzxmObj8yLV-16" target="UW6KoU9s_xzxmObj8yLV-23">
-          <mxGeometry x="-0.6069" y="-43" relative="1" as="geometry">
+          <mxGeometry x="-0.4138" y="-62" relative="1" as="geometry">
             <mxPoint x="300" y="320" as="sourcePoint" />
             <mxPoint x="360" y="380" as="targetPoint" />
             <mxPoint as="offset" />
           </mxGeometry>
         </mxCell>
         <mxCell id="UW6KoU9s_xzxmObj8yLV-37" value="Обмен данными по сети" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0;entryDx=0;entryDy=0;entryPerimeter=0;startArrow=classicThin;startFill=1;endArrow=classicThin;endFill=1;" edge="1" parent="UW6KoU9s_xzxmObj8yLV-1" target="UW6KoU9s_xzxmObj8yLV-23">
-          <mxGeometry x="-0.8846" y="42" relative="1" as="geometry">
+          <mxGeometry x="-1" y="58" relative="1" as="geometry">
             <mxPoint x="600" y="250" as="sourcePoint" />
             <mxPoint x="370" y="390" as="targetPoint" />
-            <mxPoint x="-1" as="offset" />
+            <mxPoint x="2" y="-2" as="offset" />
           </mxGeometry>
         </mxCell>
         <mxCell id="UW6KoU9s_xzxmObj8yLV-38" value="Выборка данных" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.661;entryY=-0.006;entryDx=0;entryDy=0;entryPerimeter=0;startArrow=none;startFill=0;endArrow=classicThin;endFill=1;" edge="1" parent="UW6KoU9s_xzxmObj8yLV-1" target="UW6KoU9s_xzxmObj8yLV-23">
