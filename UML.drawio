@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2021-06-25T12:43:51.405Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.216 YaBrowser/21.5.4.607 Yowser/2.5 Safari/537.36" etag="ygU0F3EgxwyF7QjmQ3vT" version="14.8.1" type="github" pages="15">
+<mxfile host="app.diagrams.net" modified="2021-06-25T13:10:38.787Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.216 YaBrowser/21.5.4.607 Yowser/2.5 Safari/537.36" etag="Fcpc-oKfOhVKOzw5hC8R" version="14.8.1" type="github" pages="15">
   <diagram id="GKcgzPVIfDXzs5H8IYNc" name="Use case">
     <mxGraphModel dx="942" dy="617" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -1936,7 +1936,7 @@
     </mxGraphModel>
   </diagram>
   <diagram id="vstTUgx8v3UO9a6CDDAI" name="Activity Teacher - Course">
-    <mxGraphModel dx="1231" dy="681" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="942" dy="617" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="V0euORPpcKlyBWRz9gqP-0" />
         <mxCell id="V0euORPpcKlyBWRz9gqP-1" parent="V0euORPpcKlyBWRz9gqP-0" />
@@ -2020,7 +2020,7 @@
             <mxPoint x="415" y="270" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="ckxSyoKWCJ0hL6R9YHbb-55" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#FF3333;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" parent="V0euORPpcKlyBWRz9gqP-1" edge="1" source="ckxSyoKWCJ0hL6R9YHbb-57">
+        <mxCell id="ckxSyoKWCJ0hL6R9YHbb-55" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#FF3333;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" parent="V0euORPpcKlyBWRz9gqP-1" source="ckxSyoKWCJ0hL6R9YHbb-57" edge="1">
           <mxGeometry relative="1" as="geometry">
             <mxPoint x="414.9999999999998" y="270" as="targetPoint" />
             <mxPoint x="400" y="587" as="sourcePoint" />
@@ -2063,7 +2063,7 @@
             <mxPoint x="612.4999999999998" y="548" as="sourcePoint" />
             <mxPoint x="414.9999999999998" y="270" as="targetPoint" />
             <Array as="points">
-              <mxPoint x="612" y="690" />
+              <mxPoint x="613" y="690" />
               <mxPoint x="780" y="690" />
               <mxPoint x="780" y="270" />
             </Array>
@@ -2095,8 +2095,8 @@
             <mxPoint x="757.5" y="548" as="sourcePoint" />
             <mxPoint x="414.9999999999998" y="270" as="targetPoint" />
             <Array as="points">
-              <mxPoint x="778" y="548" />
-              <mxPoint x="778" y="270" />
+              <mxPoint x="780" y="548" />
+              <mxPoint x="780" y="270" />
             </Array>
           </mxGeometry>
         </mxCell>
@@ -2319,7 +2319,7 @@
     </mxGraphModel>
   </diagram>
   <diagram id="av1NzWoXEMPd9Jzlyj7G" name="Activity Teacher - Test">
-    <mxGraphModel dx="862" dy="477" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="942" dy="617" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="yr3Kbwd3mWCncizA2Dfv-0" />
         <mxCell id="yr3Kbwd3mWCncizA2Dfv-1" parent="yr3Kbwd3mWCncizA2Dfv-0" />
@@ -2403,7 +2403,7 @@
             <mxPoint x="404.9999999999998" y="260" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="WiTcxICERZe9ZX7PaHVX-18" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;strokeColor=#FF3333;" parent="yr3Kbwd3mWCncizA2Dfv-1" edge="1" source="WiTcxICERZe9ZX7PaHVX-20">
+        <mxCell id="WiTcxICERZe9ZX7PaHVX-18" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;strokeColor=#FF3333;" parent="yr3Kbwd3mWCncizA2Dfv-1" source="WiTcxICERZe9ZX7PaHVX-20" edge="1">
           <mxGeometry relative="1" as="geometry">
             <mxPoint x="404.9999999999998" y="260" as="targetPoint" />
             <mxPoint x="347.4999999999998" y="580" as="sourcePoint" />
