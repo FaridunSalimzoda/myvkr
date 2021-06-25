@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2021-06-25T15:56:16.674Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.216 YaBrowser/21.5.4.607 Yowser/2.5 Safari/537.36" etag="n8tqbx65WiPlpxYDAzit" version="14.8.1" type="github" pages="14">
+<mxfile host="app.diagrams.net" modified="2021-06-25T15:57:08.778Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.216 YaBrowser/21.5.4.607 Yowser/2.5 Safari/537.36" etag="u8gSKOdeOzHNEjRfKN5y" version="14.8.1" type="github" pages="14">
   <diagram id="GKcgzPVIfDXzs5H8IYNc" name="Use case">
     <mxGraphModel dx="942" dy="617" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -1793,7 +1793,7 @@
     </mxGraphModel>
   </diagram>
   <diagram id="vstTUgx8v3UO9a6CDDAI" name="Activity Teacher - Course">
-    <mxGraphModel dx="1014" dy="524" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="1437" dy="742" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="V0euORPpcKlyBWRz9gqP-0" />
         <mxCell id="V0euORPpcKlyBWRz9gqP-1" parent="V0euORPpcKlyBWRz9gqP-0" />
@@ -1939,7 +1939,7 @@
     </mxGraphModel>
   </diagram>
   <diagram id="pTCB7JLkTTCYpqr-4lRF" name="Activity teacher - Topic">
-    <mxGraphModel dx="1232" dy="648" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="1437" dy="742" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="BzC76m4PMMNdhd_UF65Q-0" />
         <mxCell id="BzC76m4PMMNdhd_UF65Q-1" parent="BzC76m4PMMNdhd_UF65Q-0" />
