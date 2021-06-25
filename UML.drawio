@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2021-06-25T13:58:00.915Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.216 YaBrowser/21.5.4.607 Yowser/2.5 Safari/537.36" etag="yZlb0JO8NItBpYaAba9J" version="14.8.1" type="github" pages="14">
+<mxfile host="app.diagrams.net" modified="2021-06-25T14:00:04.017Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.216 YaBrowser/21.5.4.607 Yowser/2.5 Safari/537.36" etag="VzbzZ2XZBFAm9B_PssnU" version="14.8.1" type="github" pages="14">
   <diagram id="GKcgzPVIfDXzs5H8IYNc" name="Use case">
     <mxGraphModel dx="942" dy="617" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -2334,7 +2334,7 @@
         </mxCell>
         <mxCell id="WiTcxICERZe9ZX7PaHVX-24" value="Нет" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="WiTcxICERZe9ZX7PaHVX-23" vertex="1" connectable="0">
           <mxGeometry x="-0.4447" y="-2" relative="1" as="geometry">
-            <mxPoint x="-15" y="135" as="offset" />
+            <mxPoint x="-15" y="14" as="offset" />
           </mxGeometry>
         </mxCell>
         <mxCell id="WiTcxICERZe9ZX7PaHVX-25" value="Удалить тест?" style="rhombus;whiteSpace=wrap;html=1;fillColor=#ffffc0;strokeColor=#ff0000;" parent="yr3Kbwd3mWCncizA2Dfv-1" vertex="1">
